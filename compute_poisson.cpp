@@ -10,9 +10,9 @@ void poisson(double **var_p, double **var_p_new, double **RHS, int nx, int ny, d
 
   int iter = 0;
   double n, e, s, w;
-  double r_norm;
+  double r_norm = 1.;
   
-  while (r_norm<eps && iter<iter_max){
+  while (r_norm > eps && iter<iter_max){
     
     double r_ij = 0;
     iter += 1;
@@ -28,16 +28,16 @@ void poisson(double **var_p, double **var_p_new, double **RHS, int nx, int ny, d
 
       for (int j = 1; j <= ny; j++) {
 	
-	var_p_new[0][j] = var_p[1][j];
-	var_p_new[nx+1][j] = var_p[nx][j];
+	    var_p_new[0][j] = var_p[1][j];
+	    var_p_new[nx+1][j] = var_p[nx][j];
 	
-	if (j == 1) { n=1; s=0; }
-	else if (j == ny) { n = 0; s = 1; }
-	else { n=1; s=1; }
-	var_p_new[i][j] = (1-omega)*var_p[i][j] + omega/( ((e+w)/pow(dx, 2.))+((n+s)/pow(dy, 2.)) )
-	  * ( (e*var_p[i+1][j]+w*var_p_new[i-1][j])/pow(dx, 2.) + (n*var_p[i][j+1]+s*var_p_new[i][j-1])/pow(dy, 2.) - RHS[i][j] );
+        if (j == 1) { n=1; s=0; }
+        else if (j == ny) { n = 0; s = 1; }
+        else { n=1; s=1; }
+        var_p_new[i][j] = (1-omega)*var_p[i][j] + omega/( ((e+w)/pow(dx, 2.))+((n+s)/pow(dy, 2.)) )
+          * ( (e*var_p[i+1][j]+w*var_p_new[i-1][j])/pow(dx, 2.) + (n*var_p[i][j+1]+s*var_p_new[i][j-1])/pow(dy, 2.) - RHS[i][j] );
 
-	r_ij += pow(( e*(var_p[i+1][j]-var_p[i][j])-w*(var_p[i][j]-var_p[i-1][j]) )/pow(dx, 2.) + ( n*(var_p[i][j+1]-var_p[i][j])-s*(var_p[i][j]-var_p[i][j-1]) )/pow(dy, 2.) - RHS[i][j], 2.);
+        r_ij += pow(( e*(var_p[i+1][j]-var_p[i][j])-w*(var_p[i][j]-var_p[i-1][j]) )/pow(dx, 2.) + ( n*(var_p[i][j+1]-var_p[i][j])-s*(var_p[i][j]-var_p[i][j-1]) )/pow(dy, 2.) - RHS[i][j], 2.);
 	
       }
     }

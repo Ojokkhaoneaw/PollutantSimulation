@@ -6,7 +6,7 @@ void compute_uv(double **var_u, double **var_v, double **var_F, double **var_G, 
 
   
   for (int j = 1; j <= ny; j++) {
-    for (int i = 1; i <= nx-1; i++) {
+    for (int i = 1; i <= nx; i++) {
       if (i!= nx){
 	    var_u[i][j] = var_F[i][j] - (dt*dx)*(var_p_new[i+1][j]-var_p_new[i][j]);
       }
