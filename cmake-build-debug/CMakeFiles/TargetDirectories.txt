@@ -1,3 +1,4 @@
-C:/Secret/College/Numerical Computation/PollutantSimulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Secret/College/Numerical Computation/PollutantSimulation/cmake-build-debug/CMakeFiles/PollutantSimulation.dir
-C:/Secret/College/Numerical Computation/PollutantSimulation/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/PollutantSimulation.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/Libraries.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/edit_cache.dir
