@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libmath_diff.cpp.a"
+			"path" : "libmath_diff.a"
 		}
 	],
 	"backtrace" : 1,
@@ -57,9 +57,9 @@
 			]
 		}
 	],
-	"id" : "math_diff.cpp::@6890427a1f51a3e7e1df",
-	"name" : "math_diff.cpp",
-	"nameOnDisk" : "libmath_diff.cpp.a",
+	"id" : "math_diff::@6890427a1f51a3e7e1df",
+	"name" : "math_diff",
+	"nameOnDisk" : "libmath_diff.a",
 	"paths" : 
 	{
 		"build" : ".",

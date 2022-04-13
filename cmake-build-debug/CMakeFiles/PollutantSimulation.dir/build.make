@@ -94,6 +94,7 @@ PollutantSimulation.exe: CMakeFiles/PollutantSimulation.dir/build.make
 PollutantSimulation.exe: libcompute_FG.a
 PollutantSimulation.exe: libcompute_poisson.a
 PollutantSimulation.exe: libcompute_uv.a
+PollutantSimulation.exe: libmath_diff.a
 PollutantSimulation.exe: libLibraries.a
 PollutantSimulation.exe: CMakeFiles/PollutantSimulation.dir/linklibs.rsp
 PollutantSimulation.exe: CMakeFiles/PollutantSimulation.dir/objects1.rsp

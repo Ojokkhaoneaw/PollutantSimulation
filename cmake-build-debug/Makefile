@@ -168,19 +168,6 @@ compute_poisson/fast:
 .PHONY : compute_poisson/fast
 
 #=============================================================================
-# Target rules for targets named math_diff.cpp
-
-# Build rule for target.
-math_diff.cpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 math_diff.cpp
-.PHONY : math_diff.cpp
-
-# fast build rule for target.
-math_diff.cpp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.cpp.dir\build.make CMakeFiles/math_diff.cpp.dir/build
-.PHONY : math_diff.cpp/fast
-
-#=============================================================================
 # Target rules for targets named compute_uv
 
 # Build rule for target.
@@ -192,6 +179,19 @@ compute_uv: cmake_check_build_system
 compute_uv/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/build
 .PHONY : compute_uv/fast
+
+#=============================================================================
+# Target rules for targets named math_diff
+
+# Build rule for target.
+math_diff: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 math_diff
+.PHONY : math_diff
+
+# fast build rule for target.
+math_diff/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/build
+.PHONY : math_diff/fast
 
 Libraries.obj: Libraries.cpp.obj
 .PHONY : Libraries.obj
@@ -318,7 +318,7 @@ math_diff.obj: math_diff.cpp.obj
 
 # target to build an object file
 math_diff.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.cpp.dir\build.make CMakeFiles/math_diff.cpp.dir/math_diff.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/math_diff.cpp.obj
 .PHONY : math_diff.cpp.obj
 
 math_diff.i: math_diff.cpp.i
@@ -326,7 +326,7 @@ math_diff.i: math_diff.cpp.i
 
 # target to preprocess a source file
 math_diff.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.cpp.dir\build.make CMakeFiles/math_diff.cpp.dir/math_diff.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/math_diff.cpp.i
 .PHONY : math_diff.cpp.i
 
 math_diff.s: math_diff.cpp.s
@@ -334,7 +334,7 @@ math_diff.s: math_diff.cpp.s
 
 # target to generate assembly for a file
 math_diff.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.cpp.dir\build.make CMakeFiles/math_diff.cpp.dir/math_diff.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/math_diff.cpp.s
 .PHONY : math_diff.cpp.s
 
 # Help Target
@@ -350,7 +350,7 @@ help:
 	@echo ... compute_FG
 	@echo ... compute_poisson
 	@echo ... compute_uv
-	@echo ... math_diff.cpp
+	@echo ... math_diff
 	@echo ... Libraries.obj
 	@echo ... Libraries.i
 	@echo ... Libraries.s

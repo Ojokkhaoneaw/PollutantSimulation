@@ -8,7 +8,7 @@ add_library(Libraries STATIC Libraries.cpp)
 add_library(compute_FG STATIC compute_FG.cpp)
 add_library(compute_poisson STATIC compute_poisson.cpp)
 add_library(compute_uv STATIC compute_uv.cpp)
-add_library(math_diff.cpp STATIC math_diff.cpp)
+add_library(math_diff STATIC math_diff.cpp)
 
 target_link_libraries(${PROJECT_NAME} compute_FG)
 target_link_libraries(${PROJECT_NAME} compute_poisson)

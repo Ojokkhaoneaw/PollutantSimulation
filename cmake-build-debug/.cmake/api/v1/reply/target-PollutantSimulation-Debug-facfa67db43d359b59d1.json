@@ -93,6 +93,10 @@
 	"dependencies" : 
 	[
 		{
+			"backtrace" : 2,
+			"id" : "compute_FG::@6890427a1f51a3e7e1df"
+		},
+		{
 			"backtrace" : 6,
 			"id" : "Libraries::@6890427a1f51a3e7e1df"
 		},
@@ -101,12 +105,12 @@
 			"id" : "compute_poisson::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 2,
-			"id" : "compute_FG::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 4,
 			"id" : "compute_uv::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "math_diff::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "PollutantSimulation::@6890427a1f51a3e7e1df",
@@ -139,7 +143,7 @@
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "-lmath_diff",
+				"fragment" : "libmath_diff.a",
 				"role" : "libraries"
 			},
 			{
