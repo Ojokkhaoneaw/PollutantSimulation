@@ -86,25 +86,25 @@ void simulation(double **var, double **var_new, int nx, int ny, double c, double
 //3. Outflow - > Neumann Outflow Boundary Condition (du_dx = dv_dx = 0)
 void noslip_condition(double **var_u, double **var_v, int nx, int ny, char side) {
     switch (side) {
-        case 'west': // Left Side of Grid
+        case 'w': // Left Side of Grid
             for (int j = 1; j <= ny + 1; j++) {
                 var_u[0][j] = 0;
                 var_v[0][j] = -var_v[1][j];
             }
             break;
-        case 'north': // Top Side of Grid
+        case 'n': // Top Side of Grid
             for (int i = 1; i <= nx + 1; i++) {
                 var_v[i][ny] = 0;
                 var_u[i][ny+1] = -var_u[i][ny] ;
             }
             break;
-        case 'east': // Right Side of Grid
+        case 'e': // Right Side of Grid
             for (int j = 1; j <= ny + 1; j++) {
                 var_v[nx+1][j] = -var_v[nx][j];
                 var_u[nx][j] = 0;
             }
             break;
-        case 'south': // Bottom Side of Grid
+        case 's': // Bottom Side of Grid
             for (int i = 1; i <= nx + 1; i++) {
                 var_v[i][0] = 0;
                 var_u[i][0] = -var_u[i][1];
@@ -115,25 +115,25 @@ void noslip_condition(double **var_u, double **var_v, int nx, int ny, char side)
 
 void freeslip_condition(double **var_u, double **var_v, int nx, int ny, char side) {
     switch (side) {
-        case 'west':
+        case 'w':
             for (int j = 1; j <= ny + 1; j++) {
                 var_u[0][j] = 0;
                 var_v[0][j] = var_v[1][j];
             }
             break;
-        case 'north':
+        case 'n':
             for (int i = 1; i <= nx + 1; i++) {
                 var_u[i][ny+1] = var_u[i][ny];
                 var_v[i][ny] = 0;
             }
             break;
-        case 'east':
+        case 'e':
             for (int j = 1; j <= ny + 1; j++) {
                 var_u[nx][j] = 0;
                 var_v[nx+1][j] = var_v[nx][j];
             }
             break;
-        case 'south':
+        case 's':
             for (int i = 1; i <= nx + 1; i++) {
                 var_u[i][0] = var_u[i][1];
                 var_v[i][0] = 0;
@@ -144,25 +144,25 @@ void freeslip_condition(double **var_u, double **var_v, int nx, int ny, char sid
 
 void outflow_condition(double **var_u, double **var_v, int nx, int ny, char side) {
     switch (side) {
-        case 'west':
+        case 'w':
             for (int j = 1; j <= ny + 1; j++) {
                 var_u[0][j] = var_u[1][j];
                 var_v[0][j] = var_v[1][j];
             }
             break;
-        case 'north':
+        case 'n':
             for (int i = 1; i <= nx + 1; i++) {
                 var_u[i][ny+1] = var_u[i][ny];
                 var_v[i][ny+1] = var_v[i][ny-1];
             }
             break;
-        case 'east':
+        case 'e':
             for (int j = 1; j <= ny + 1; j++) {
                 var_u[nx+1][j] = var_u[nx-1][j];
                 var_v[nx+1][j] = var_v[nx][j];
             }
             break;
-        case 'south':
+        case 's':
             for (int i = 1; i <= nx + 1; i++) {
                 var_u[i][0] = var_u[i][1];
                 var_v[i][0] = var_v[i][1];
@@ -173,25 +173,25 @@ void outflow_condition(double **var_u, double **var_v, int nx, int ny, char side
 
 void inflow_condition(double **var_u, double **var_v, int nx, int ny, char side, double u, double v) {
     switch (side) {
-        case 'west':
+        case 'w':
             for (int j = 1; j <= ny + 1; j++) {
                 var_u[0][j] = u;
                 var_v[0][j] = 2*v - var_v[1][j];
             }
             break;
-        case 'north':
+        case 'n':
             for (int i = 1; i <= nx + 1; i++) {
                 var_u[i][ny+1] = 2*u - var_u[i][ny];
                 var_v[i][ny] = v;
             }
             break;
-        case 'east':
+        case 'e':
             for (int j = 1; j <= ny + 1; j++) {
                 var_u[nx][j] = u;
                 var_v[nx+1][j] = 2*v - var_v[nx][j];
             }
             break;
-        case 'south':
+        case 's':
             for (int i = 1; i <= nx + 1; i++) {
                 var_u[i][0] = 2*u - var_u[i][1];
                 var_v[i][1] = v;
@@ -204,26 +204,26 @@ void inflow_condition(double **var_u, double **var_v, int nx, int ny, char side,
 
 // }
 
-void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, char wall, char type, double P) {
+void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, char side, char type, double P) {
     switch (type) {
         case 'D': // Dirichlet Boundary Condition : First-Type
-            switch (wall) {
-                case 'west':
+            switch (side) {
+                case 'w':
                     for (int j = 1; j <= ny + 1; j++) {
                         var_P[0][j] = 2*P - var_P[1][j];
                     }
                     break;
-                case 'north':
+                case 'n':
                     for (int i = 1; i <= nx + 1; i++) {
                         var_P[i][ny+1] = 2*P - var_P[i][ny];
                     }
                     break;
-                case 'east':
+                case 'e':
                     for (int j = 1; j <= ny + 1; j++) {
                         var_P[nx+1][j] = 2*P - var_P[nx][j];
                     }
                     break;
-                case 'south':
+                case 's':
                     for (int i = 1; i <= nx + 1; i++) {
                         var_P[i][0] = 2*P - var_P[i][1];
                     }
@@ -231,23 +231,23 @@ void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, ch
             }
             break;
         case 'N': // Neumann Boundary Condition : Second-Type
-            switch (wall) {
-                case 'west':
+            switch (side) {
+                case 'w':
                     for (int j = 1; j <= ny + 1; j++) {
                         var_P[0][j] = var_P[1][j] - dx*P;
                     }
                     break;
-                case 'north':
+                case 'n':
                     for (int i = 1; i <= nx + 1; i++) {
                         var_P[i][0] = var_P[i][1] + dx*P;
                     }
                     break;
-                case 'east':
+                case 'e':
                     for (int j = 1; j <= ny + 1; j++) {
                         var_P[nx+1][j] = var_P[nx][j] + dx*P;
                     }
                     break;
-                case 'south':
+                case 's':
                     for (int i = 1; i <= nx + 1; i++) {
                         var_P[i][ny+1] = var_P[i][ny] - dx*P;
                     }

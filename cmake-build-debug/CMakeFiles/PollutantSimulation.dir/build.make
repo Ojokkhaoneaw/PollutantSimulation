@@ -91,6 +91,9 @@ PollutantSimulation_EXTERNAL_OBJECTS =
 
 PollutantSimulation.exe: CMakeFiles/PollutantSimulation.dir/main.cpp.obj
 PollutantSimulation.exe: CMakeFiles/PollutantSimulation.dir/build.make
+PollutantSimulation.exe: libcompute_FG.a
+PollutantSimulation.exe: libcompute_poisson.a
+PollutantSimulation.exe: libcompute_uv.a
 PollutantSimulation.exe: libLibraries.a
 PollutantSimulation.exe: CMakeFiles/PollutantSimulation.dir/linklibs.rsp
 PollutantSimulation.exe: CMakeFiles/PollutantSimulation.dir/objects1.rsp

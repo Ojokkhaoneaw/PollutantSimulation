@@ -138,7 +138,9 @@ CMakeFiles/Libraries.dir/Libraries.cpp.obj: ../Libraries.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
-  C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc
+  C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
+  C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/x86_64-w64-mingw32/include/math.h
 
 
 ../Libraries.cpp:
@@ -416,3 +418,7 @@ C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath:
+
+C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/x86_64-w64-mingw32/include/math.h:

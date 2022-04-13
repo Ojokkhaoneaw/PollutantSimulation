@@ -16,7 +16,11 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2,
+						3,
+						4,
+						5
 					]
 				}
 			],
@@ -32,7 +36,11 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2,
+						3,
+						4,
+						5
 					]
 				}
 			],
@@ -48,8 +56,36 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PollutantSimulation::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PollutantSimulation-Debug-3b5890b274ee96dd431e.json",
+					"jsonFile" : "target-PollutantSimulation-Debug-23198ba12b60a37f6907.json",
 					"name" : "PollutantSimulation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "compute_FG::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-compute_FG-Debug-ed964b6fce839b2b9d62.json",
+					"name" : "compute_FG",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "compute_poisson::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-compute_poisson-Debug-7c5168374a123e6051d5.json",
+					"name" : "compute_poisson",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "compute_uv::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-compute_uv-Debug-4b1a88f78666e22be025.json",
+					"name" : "compute_uv",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "math_diff.cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-math_diff.cpp-Debug-c57a79421ba8db5bb1f7.json",
+					"name" : "math_diff.cpp",
 					"projectIndex" : 0
 				}
 			]

@@ -1,0 +1,2 @@
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc libmath_diff.cpp.a CMakeFiles/math_diff.cpp.dir/math_diff.cpp.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ranlib.exe libmath_diff.cpp.a

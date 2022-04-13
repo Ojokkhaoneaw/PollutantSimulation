@@ -6,7 +6,9 @@ void initialize(double **var, int nx, int ny) ;
 void visualize(double **var, int nx, int ny) ;
 void update(double **var, double **var_new, int nx, int ny) ;
 void simulation(double **var, double **var_new, int nx, int ny, double c, double dx, double dy, double dt) ;
-void paraview(double **var,int nx, int ny, double dx, double dy) ;
+
+
+
 
 int main() {
     int nx = 11 ;

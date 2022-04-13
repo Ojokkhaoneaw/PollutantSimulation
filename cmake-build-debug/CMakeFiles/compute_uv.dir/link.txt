@@ -1,0 +1,2 @@
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc libcompute_uv.a CMakeFiles/compute_uv.dir/compute_uv.cpp.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ranlib.exe libcompute_uv.a
