@@ -43,10 +43,10 @@ void poisson(double **var_p, double **var_p_new, double **RHS, int nx, int ny, d
     }
     // Update & BC Presure
     update(var_p, var_p_new, nx, ny);
-    boundary_pressure(var_p, nx, ny, dx, dy, 'north', 'N', 0);
-    boundary_pressure(var_p, nx, ny, dx, dy, 'east', 'D', 0);
-    boundary_pressure(var_p, nx, ny, dx, dy, 'south', 'N', 0);
-    boundary_pressure(var_p, nx, ny, dx, dy, 'west', 'N', 0);
+    boundary_pressure(var_p, nx, ny, dx, dy, 'n', 'N', 0);
+    boundary_pressure(var_p, nx, ny, dx, dy, 'e', 'D', 0);
+    boundary_pressure(var_p, nx, ny, dx, dy, 's', 'N', 0);
+    boundary_pressure(var_p, nx, ny, dx, dy, 'w', 'N', 0);
     
     r_norm = sqrt(r_ij/(nx*ny));
 

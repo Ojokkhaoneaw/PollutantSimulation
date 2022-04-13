@@ -7,7 +7,7 @@ using namespace std ;
 void initialize(double **var, int nx, int ny) {
     for (int i = 0 ; i <= nx-1 ; i++){
         for (int j = 0 ; j <= ny-1 ; j++) {
-            var[i][j] = 0.0 ;
+            var[i][j] = 0. ;
         }
     }
 }
@@ -34,35 +34,38 @@ void update(double **var, double **var_new, int nx, int ny) {
     }
 }
 // incomplete
-void paraview(double **var,int nx, int ny) {
-    ofstream myfile ;
-    myfile.open("var.vtk") ;
-//  Paraview header
-    myfile << "# vtk DataFile Version 2.0\n" ;
-    myfile << "FlowField\n" ;
-    myfile << "ACSII\n" ;
-//  Grid
-    myfile << "DATASET STRUCTURED_GRID\n" ;
-    myfile << "DIMENSIONS" << nx << " " << 1 << " " << ny << "\n" ;
-    myfile << "POINTS" << nx*1*ny << "float\n" ;
-    for(int j = 0 ; j <= ny-1 ; j++ ){
-        for(int i = 0 ; i <= nx - 1 ; i++ ) {
-            myfile << var[i][j] << " " ;
-        }
-        myfile << "\n" ;
-    }
-    myfile << "\n" ;
-    myfile << "POINT_DATA" ;
-    myfile << "POINTS" << nx*ny << "\n" ;
-    myfile << "\n" ;
-    myfile << "SCALARS PHI float 1\n" ;
-    myfile << "LOOKUP_TABLE default\n" ;
-    for(int j = 0 ; j <= ny-1 ; j++) {
-        for(int i = 0 ; i <= nx-1 ; i++) {
-            myfile << var[i][j] << "\n" ;
+
+void paraview(int i, string varName, double **var, int nx, int ny, int dx, int dy) {
+    string fileName = "var_" + varName + "_" + to_string(i) + ".vtk";
+    ofstream myfile;
+    myfile.open(fileName);
+
+    //Paraview Header
+    myfile << "# vtk DataFile Version 2.0" << endl;
+    myfile << "FlowField" << endl;
+    myfile << "ASCII" << endl;
+
+    //Grid
+    myfile << "DATASET STRUCTURED_GRID" << endl;
+    myfile << "DIMENSIONS " << nx+2 << " " << 1 << " " << ny+2 << " " << endl;
+    myfile << "POINTS " << (nx+2)*(ny+2) << " float" << endl;
+    for (int j = 0; j <= ny + 1; j++) {
+        for (int i = 0; i <= nx + 1; i++) {
+            myfile << i*dx << " " << j*dy << " 0" << endl;
         }
     }
-    myfile.close() ;
+    myfile << endl;
+
+    //Data
+    myfile << "POINT_DATA " << (nx+2)*(ny+2) << endl;
+    myfile << endl;
+    myfile << "SCALARS " << varName << " float 1" << endl;
+    myfile << "LOOKUP_TABLE default" << endl;
+    for (int j = 0; j <= ny+1; j++) {
+        for (int i = 0; i <= nx+1; i++) {
+            myfile << var[i][j] << endl;
+        }
+    }
 }
 
 
@@ -257,7 +260,7 @@ void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, ch
     }
 }
 
-void phi_boundary(double **var_phi, int nx, int ny) {
+void phi_condition(double **var_phi, int nx, int ny) {
     for(int j = 0; j <= ny+1 ; j++) {
         if (j <= 0.5) {
             var_phi[0][j] = 1 ;

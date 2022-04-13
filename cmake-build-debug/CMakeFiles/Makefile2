@@ -87,10 +87,10 @@ clean: CMakeFiles/compute_uv.dir/clean
 # Target rules for target CMakeFiles/PollutantSimulation.dir
 
 # All Build rule for target.
-CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_FG.dir/all
-CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_uv.dir/all
 CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/Libraries.dir/all
 CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_poisson.dir/all
+CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_FG.dir/all
+CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_uv.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target PollutantSimulation"
