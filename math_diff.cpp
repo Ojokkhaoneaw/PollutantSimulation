@@ -73,3 +73,15 @@ double d2phi_dx2(double **var_phi, int i, int j, double dx){
 double d2phi_dy2(double **var_phi, int i, int j, double dy){
   return (var_phi[i][j+1]-2*var_phi[i][j]+var_phi[i][j-1])/(dy*dy);
 }
+
+double dvphi_dy(double **var_v, double **var_phi, int i, int j, double dy, double gamma) {
+  double Lterm = 0.5*( var_v[i][j]*(var_phi[i][j]+var_u[i][j+1]) -  var_v[i][j-1]*(var_phi[i][j-1]+var_phi[i][j]) );
+  double Rterm = 0.5*gamma*( abs(var_v[i][j])*(var_phi[i][j]-var_phi[i][j+1]) -  abs(var_v[i][j-1])*(var_phi[i][j-1]-var_phi[i][j]));
+  return (Rterm+Lterm)/dy;
+}
+
+double duphi_dx(double **var_u, double **var_phi, int i, int j, double dx, double gamma) {
+  double Lterm = 0.5*( var_u[i][j]*(var_phi[i][j]+var_u[i+1][j]) -  var_u[i-1][j]*(var_phi[i-1][j]+var_phi[i][j]) );
+  double Rterm = 0.5*gamma*( abs(var_u[i][j])*(var_phi[i][j]-var_phi[i+1][j]) -  abs(var_v[i-1][j])*(var_phi[i-1][j]-var_phi[i][j]));
+  return (Rterm+Lterm)/dx;
+}
