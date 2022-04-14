@@ -27,18 +27,18 @@ void compute_phi(double **var_phi,double **var_phinew,double **var_u, double **v
 
 
 int main() {
-    const int iter(10);
+    const int iter(50);
     const int iter_max(1000);
-    const int nx(275);
+    const int nx(400);
     const int ny(20);
-    const double dy = 1.;
-    const double dx = 5.*dy ;
+    const double dy = 0.1;
+    const double dx = 3.*dy ;
     const double dt = 0.01;
     const double u_init = 1.;
     const double v_init = 0.;
     const double p_init = 0.;
     const double phi_init = 1. ;
-    const double Re = 300.; // Reynolds number
+    const double Re = 200.; // Reynolds number
     const double g_x = 0.;
     const double g_y = 0.;
     const double gamma = 0.5; // Upwind differencing factor
@@ -120,8 +120,6 @@ int main() {
     noslip_condition(u, v, nx, ny, 's');
     pressure_condition(p, nx, ny, dx, dy, 's', 'N', p_init);
     phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
-    cout << "------------phi-------------" <<"\n" ;
-    visualize(phi,nx,ny);
     for (int i = 1; i <= iter; i++) {
 
         compute_F(F, u, v, nx, ny, dx, dy, dt, gamma, Re, g_x);
@@ -141,17 +139,22 @@ int main() {
         phi_condition(phi,nx,ny,dx,dy,'e',phi_init) ;
         phi_condition(phi,nx,ny,dx,dy,'n',phi_init) ;
         phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
+        cout << "time step : " << i <<"\n" ;
+//        cout << "------------u-------------" <<"\n" ;
+//        visualize(u,nx,ny);
+//        cout << "------------v-------------" <<"\n" ;
+//        visualize(v,nx,ny);
+//        cout << "------------p-------------" <<"\n" ;
+//        visualize(p,nx,ny);
         cout << "------------phi-------------" <<"\n" ;
         visualize(phi,nx,ny);
-//        cout << "------------phi-------------" <<"\n" ;
-//        visualize(phi,nx,ny);
-//        if (i == 1 || i%5 == 0) {
-//            cout << "Iter "<< i << endl;
-//            paraview(i ,"p" , p, nx, ny, dx, dy);
-//            paraview(i ,"u" , u, nx, ny, dx, dy);
-//            paraview(i ,"v" , u, nx, ny, dx, dy) ;
-//            paraview(i ,"phi" , phi, nx, ny, dx, dy);
-//        }
+        if (i == 1 || i%5 == 0) {
+            cout << "Iter "<< i << endl;
+            paraview(i ,"p" , p, nx, ny, dx, dy);
+            paraview(i ,"u" , u, nx, ny, dx, dy);
+            paraview(i ,"v" , u, nx, ny, dx, dy) ;
+            paraview(i ,"phi" , phi, nx, ny, dx, dy);
+        }
 
     }
 }
