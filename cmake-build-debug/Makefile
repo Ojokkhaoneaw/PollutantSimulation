@@ -64,16 +64,6 @@ CMAKE_BINARY_DIR = C:\Users\JirayuH\PollutantSimulation\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -83,6 +73,16 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,6 +181,19 @@ compute_uv/fast:
 .PHONY : compute_uv/fast
 
 #=============================================================================
+# Target rules for targets named compute_phi
+
+# Build rule for target.
+compute_phi: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 compute_phi
+.PHONY : compute_phi
+
+# fast build rule for target.
+compute_phi/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/build
+.PHONY : compute_phi/fast
+
+#=============================================================================
 # Target rules for targets named math_diff
 
 # Build rule for target.
@@ -240,6 +253,30 @@ compute_FG.s: compute_FG.cpp.s
 compute_FG.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/compute_FG.cpp.s
 .PHONY : compute_FG.cpp.s
+
+compute_phi.obj: compute_phi.cpp.obj
+.PHONY : compute_phi.obj
+
+# target to build an object file
+compute_phi.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/compute_phi.cpp.obj
+.PHONY : compute_phi.cpp.obj
+
+compute_phi.i: compute_phi.cpp.i
+.PHONY : compute_phi.i
+
+# target to preprocess a source file
+compute_phi.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/compute_phi.cpp.i
+.PHONY : compute_phi.cpp.i
+
+compute_phi.s: compute_phi.cpp.s
+.PHONY : compute_phi.s
+
+# target to generate assembly for a file
+compute_phi.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/compute_phi.cpp.s
+.PHONY : compute_phi.cpp.s
 
 compute_poisson.obj: compute_poisson.cpp.obj
 .PHONY : compute_poisson.obj
@@ -348,6 +385,7 @@ help:
 	@echo ... Libraries
 	@echo ... PollutantSimulation
 	@echo ... compute_FG
+	@echo ... compute_phi
 	@echo ... compute_poisson
 	@echo ... compute_uv
 	@echo ... math_diff
@@ -357,6 +395,9 @@ help:
 	@echo ... compute_FG.obj
 	@echo ... compute_FG.i
 	@echo ... compute_FG.s
+	@echo ... compute_phi.obj
+	@echo ... compute_phi.i
+	@echo ... compute_phi.s
 	@echo ... compute_poisson.obj
 	@echo ... compute_poisson.i
 	@echo ... compute_poisson.s

@@ -110,34 +110,6 @@ void noslip_condition(double **var_u, double **var_v, int nx, int ny, char side)
     }
 }
 
-void freeslip_condition(double **var_u, double **var_v, int nx, int ny, char side) {
-    switch (side) {
-        case 'w':
-            for (int j = 0; j <= ny + 1; j++) {
-                var_u[0][j] = 0;
-                var_v[0][j] = var_v[1][j];
-            }
-            break;
-        case 'n':
-            for (int i = 0; i <= nx + 1; i++) {
-                var_u[i][ny+1] = var_u[i][ny];
-                var_v[i][ny] = 0;
-            }
-            break;
-        case 'e':
-            for (int j = 0; j <= ny + 1; j++) {
-                var_u[nx][j] = 0;
-                var_v[nx+1][j] = var_v[nx][j];
-            }
-            break;
-        case 's':
-            for (int i = 0; i <= nx + 1; i++) {
-                var_u[i][0] = var_u[i][1];
-                var_v[i][0] = 0;
-            }
-            break;
-    }
-}
 
 void outflow_condition(double **var_u, double **var_v, int nx, int ny, char side) {
     switch (side) {
@@ -254,13 +226,31 @@ void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, ch
     }
 }
 
-void phi_condition(double **var_phi, int nx, int ny) {
-    for(int j = 0; j <= ny+1 ; j++) {
-        if (j <= 0.5) {
-            var_phi[0][j] = 1 ;
-        }else{
-            var_phi[0][j] = 0 ;
-        }
+void phi_condition(double **var_phi,int nx,int ny,double dx,double dy, char side, double phi) {
+    switch (side) {
+        case 'w':
+            double phi_c ;
+            for (int j = 0; j <= ny + 1; j++) {
+                if (j <= (ny+1)/2 ) {phi_c = phi ;}
+                else{ phi_c = 0;}
+                var_phi[0][j] = 2*phi_c - var_phi[1][j];
+            }
+            break;
+        case 'n':
+            for (int i = 0; i <= nx + 1; i++) {
+                var_phi[i][0] = var_phi[i][1];
+            }
+            break;
+        case 'e':
+            for (int j = 0; j <= ny + 1; j++) {
+                var_phi[nx+1][j] = var_phi[nx][j];
+            }
+            break;
+        case 's':
+            for (int i = 0; i <= nx + 1; i++) {
+                var_phi[i][ny+1] = var_phi[i][ny];
+            }
+            break;
     }
 }
 

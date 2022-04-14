@@ -34,12 +34,6 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 13,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
 				"line" : 14,
 				"parent" : 0
 			},
@@ -59,6 +53,18 @@
 				"command" : 1,
 				"file" : 0,
 				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 19,
 				"parent" : 0
 			}
 		]
@@ -97,7 +103,7 @@
 			"id" : "compute_FG::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 6,
+			"backtrace" : 7,
 			"id" : "Libraries::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -107,6 +113,10 @@
 		{
 			"backtrace" : 4,
 			"id" : "compute_uv::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "compute_phi::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 5,
@@ -148,6 +158,11 @@
 			},
 			{
 				"backtrace" : 6,
+				"fragment" : "libcompute_phi.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
 				"fragment" : "libLibraries.a",
 				"role" : "libraries"
 			},

@@ -11,7 +11,7 @@ void noslip_condition(double **var_u, double **var_v, int nx, int ny, char wall)
 void outflow_condition(double **var_u, double **var_v, int nx, int ny, char wall);
 void inflow_condition(double **var_u, double **var_v, int nx, int ny, char wall, double u, double v);
 void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, char wall, char type, double P) ;
-void phi_condition(double **var_phi, int nx, int ny) ;
+void phi_condition(double **var_phi,int nx,int ny,double dx,double dy, char side, double phi) ;
 
 
 void compute_F(double **var_F, double **var_u, double **var_v, int nx, int ny, double dx, double dy, double dt, double gamma, double Re, double g_x);
@@ -23,22 +23,22 @@ void poisson(double **var_p, double **var_p_new, double **RHS, int nx, int ny, d
 
 
 void compute_uv(double **var_u, double **var_v, double **var_F, double **var_G, double **var_p_new, int nx, int ny, double dx, double dy, double dt);
-
+void compute_phi(double **var_phi,double **var_phinew,double **var_u, double **var_v,  int nx, int ny,double dx,double dy,double dt,double gamma, double Re) ;
 
 
 int main() {
-    const int iter(50);
+    const int iter(10);
     const int iter_max(1000);
-    const int nx(400);
+    const int nx(275);
     const int ny(20);
-    const double dx = 1.;
     const double dy = 1.;
+    const double dx = 5.*dy ;
     const double dt = 0.01;
     const double u_init = 1.;
     const double v_init = 0.;
     const double p_init = 0.;
-
-    const double Re = 1.; // Reynolds number
+    const double phi_init = 1. ;
+    const double Re = 300.; // Reynolds number
     const double g_x = 0.;
     const double g_y = 0.;
     const double gamma = 0.5; // Upwind differencing factor
@@ -94,7 +94,7 @@ int main() {
         phi[i] = (double *) malloc ((ny + 2) * sizeof(double));
     }
 
-    double **phi_new; // P^(n+1)
+    double **phi_new;
     phi_new = (double **) malloc ((nx + 2) * sizeof(double));
     for (int i = 0; i <= nx + 1; i++) {
         phi_new[i] = (double *) malloc ((ny + 2) * sizeof(double));
@@ -103,21 +103,25 @@ int main() {
     initialize(u,nx, ny,u_init) ;
     initialize(v,nx, ny,v_init);
     initialize(p,nx, ny,p_init);
-
+    initialize(phi,nx,ny,0) ;
     // West
     inflow_condition(u, v, nx, ny, 'w', u_init, v_init);
     pressure_condition(p, nx, ny, dx, dy, 'w', 'N', p_init);
+    phi_condition(phi,nx,ny,dx,dy,'w',phi_init) ;
     // East
     outflow_condition(u, v, nx, ny, 'e');
     pressure_condition(p, nx, ny, dx, dy, 'e', 'D', p_init);
-    // Wall (North and South)
+    phi_condition(phi,nx,ny,dx,dy,'e',phi_init) ;
+    // Wall (Top)
     noslip_condition(u, v, nx, ny, 'n');
     pressure_condition(p, nx, ny, dx, dy, 'n', 'N', p_init);
+    phi_condition(phi,nx,ny,dx,dy,'n',phi_init) ;
+    // Wall (South)
     noslip_condition(u, v, nx, ny, 's');
     pressure_condition(p, nx, ny, dx, dy, 's', 'N', p_init);
-    // cout << " - Init BC - " << endl;
-    phi_condition(phi, nx,ny) ;
-
+    phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
+    cout << "------------phi-------------" <<"\n" ;
+    visualize(phi,nx,ny);
     for (int i = 1; i <= iter; i++) {
 
         compute_F(F, u, v, nx, ny, dx, dy, dt, gamma, Re, g_x);
@@ -125,21 +129,29 @@ int main() {
         compute_RHS(RHS, F, G, nx, ny, dx, dy, dt);
 
         poisson(p, p_new, RHS, nx, ny, dx, dy, omega, eps, iter_max);
-        cout << "------------u--------------" <<"\n" ;
         inflow_condition(u ,v , nx, ny, 'w', u_init, v_init);
         outflow_condition(u ,v , nx, ny, 'e');
         noslip_condition(u ,v , nx, ny, 'n');
         noslip_condition(u ,v , nx, ny, 's');
 
         compute_uv(u, v, F, G, p_new, nx, ny, dx, dy, dt);
-        visualize(u,nx,ny);
-        if (i == 1 || i%5 == 0) {
-            cout << "Iter "<< i << endl;
-            paraview(i ,"p" , p, nx, ny, dx, dy);
-            paraview(i ,"u" , u, nx, ny, dx, dy);
-            paraview(i ,"v" , u, nx, ny, dx, dy) ;
-            paraview(i ,"phi" , phi, nx, ny, dx, dy);
-        }
+        compute_phi(phi,phi_new,u,v,nx,ny,dx,dy,dt,gamma,Re) ;
+        update(phi,phi_new,nx,ny) ;
+        phi_condition(phi,nx,ny,dx,dy,'w',phi_init) ;
+        phi_condition(phi,nx,ny,dx,dy,'e',phi_init) ;
+        phi_condition(phi,nx,ny,dx,dy,'n',phi_init) ;
+        phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
+        cout << "------------phi-------------" <<"\n" ;
+        visualize(phi,nx,ny);
+//        cout << "------------phi-------------" <<"\n" ;
+//        visualize(phi,nx,ny);
+//        if (i == 1 || i%5 == 0) {
+//            cout << "Iter "<< i << endl;
+//            paraview(i ,"p" , p, nx, ny, dx, dy);
+//            paraview(i ,"u" , u, nx, ny, dx, dy);
+//            paraview(i ,"v" , u, nx, ny, dx, dy) ;
+//            paraview(i ,"phi" , phi, nx, ny, dx, dy);
+//        }
 
     }
 }
