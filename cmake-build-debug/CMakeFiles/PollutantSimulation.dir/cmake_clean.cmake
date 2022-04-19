@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PollutantSimulation.dir/main.cpp.obj"
-  "CMakeFiles/PollutantSimulation.dir/main.cpp.obj.d"
+  "CMakeFiles/PollutantSimulation.dir/main3D.cpp.obj"
+  "CMakeFiles/PollutantSimulation.dir/main3D.cpp.obj.d"
   "PollutantSimulation.exe"
   "PollutantSimulation.exe.manifest"
   "PollutantSimulation.pdb"
