@@ -361,7 +361,7 @@
 		<Unit filename="C:/Users/JirayuH/PollutantSimulation/compute_uv.cpp">
 			<Option target="compute_uv"/>
 		</Unit>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/main3D.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/main.cpp">
 			<Option target="PollutantSimulation"/>
 		</Unit>
 		<Unit filename="C:/Users/JirayuH/PollutantSimulation/math_diff.cpp">

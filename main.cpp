@@ -121,6 +121,8 @@ int main() {
     noslip_condition(u, v, nx, ny, 's');
     pressure_condition(p, nx, ny, dx, dy, 's', 'N', p_init);
     phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
+    cout << "------------u-------------" <<"\n" ;
+    visualize(u,nx,ny);
     for (int num_iter = 1; num_iter <= iter; num_iter++) {
 
         compute_F(F, u, v, nx, ny, dx, dy, dt, gamma, Re, g_x);
@@ -128,12 +130,11 @@ int main() {
         compute_RHS(RHS, F, G, nx, ny, dx, dy, dt);
 
         poisson(p, p_new, RHS, nx, ny, dx, dy, omega, eps, iter_max);
+        compute_uv(u, v, F, G, p_new, nx, ny, dx, dy, dt);
         inflow_condition(u ,v , nx, ny, 'w', u_init, v_init);
         outflow_condition(u ,v , nx, ny, 'e');
         noslip_condition(u ,v , nx, ny, 'n');
         noslip_condition(u ,v , nx, ny, 's');
-
-        compute_uv(u, v, F, G, p_new, nx, ny, dx, dy, dt);
         compute_phi(phi,phi_new,u,v,nx,ny,dx,dy,dt,gamma,Re) ;
         update(phi,phi_new,nx,ny) ;
         phi_condition(phi,nx,ny,dx,dy,'w',phi_init) ;
@@ -142,8 +143,8 @@ int main() {
         phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
         if (num_iter == 1 || num_iter%5 == 0) {
             cout << "time step : " << num_iter <<"\n" ;
-            cout << "------------phi-------------" <<"\n" ;
-            visualize(phi,nx,ny);
+            cout << "------------u-------------" <<"\n" ;
+            visualize(u,nx,ny);
             paraview(num_iter ,"p" , p, nx, ny, dx, dy);
             paraview(num_iter ,"F" , F, nx, ny, dx, dy);
             paraview(num_iter ,"u" , u, nx, ny, dx, dy);

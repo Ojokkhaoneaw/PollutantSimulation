@@ -3,8 +3,8 @@ project(PollutantSimulation)
 
 set(CMAKE_CXX_STANDARD 14)
 
-#add_executable(PollutantSimulation main.cpp)
-add_executable(PollutantSimulation main3D.cpp)
+add_executable(PollutantSimulation main.cpp)
+#add_executable(PollutantSimulation main3D.cpp)
 add_library(Libraries STATIC Libraries.cpp)
 add_library(compute_FG STATIC compute_FG.cpp)
 add_library(compute_poisson STATIC compute_poisson.cpp)

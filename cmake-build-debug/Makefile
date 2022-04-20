@@ -326,29 +326,29 @@ compute_uv.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/compute_uv.cpp.s
 .PHONY : compute_uv.cpp.s
 
-main3D.obj: main3D.cpp.obj
-.PHONY : main3D.obj
+main.obj: main.cpp.obj
+.PHONY : main.obj
 
 # target to build an object file
-main3D.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main3D.cpp.obj
-.PHONY : main3D.cpp.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-main3D.i: main3D.cpp.i
-.PHONY : main3D.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-main3D.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main3D.cpp.i
-.PHONY : main3D.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main3D.s: main3D.cpp.s
-.PHONY : main3D.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-main3D.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main3D.cpp.s
-.PHONY : main3D.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 math_diff.obj: math_diff.cpp.obj
 .PHONY : math_diff.obj
@@ -404,9 +404,9 @@ help:
 	@echo ... compute_uv.obj
 	@echo ... compute_uv.i
 	@echo ... compute_uv.s
-	@echo ... main3D.obj
-	@echo ... main3D.i
-	@echo ... main3D.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 	@echo ... math_diff.obj
 	@echo ... math_diff.i
 	@echo ... math_diff.s
