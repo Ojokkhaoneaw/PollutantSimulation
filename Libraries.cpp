@@ -195,26 +195,26 @@ void inflow_condition(double **var_u, double **var_v, int nx, int ny, char side,
     switch (side) {
         case 'w':
             for (int j = 0; j <= ny + 1; j++) {
-                var_v[0][j] = v;
-                var_u[0][j] = 2*u - var_u[1][j];
+                var_u[0][j] = u;
+                var_v[0][j] = 2*v - var_v[1][j];
             }
             break;
         case 'e':
             for (int j = 0; j <= ny + 1; j++) {
-                var_v[nx][j] = v;
-                var_u[nx+1][j] = 2*u - var_u[nx][j];
+                var_u[nx][j] = u;
+                var_v[nx+1][j] = 2*v - var_v[nx][j];
             }
             break;
         case 'n':
             for (int i = 0; i <= nx + 1; i++) {
-                var_v[i][ny+1] = 2*v - var_v[i][ny];
-                var_u[i][ny] = u;
+                var_u[i][ny+1] = 2*u - var_u[i][ny];
+                var_v[i][ny] = v;
             }
             break;
         case 's':
             for (int i = 0; i <= nx + 1; i++) {
-                var_v[i][0] = 2*v - var_v[i][1];
-                var_u[i][1] = u;
+                var_u[i][0] = 2*u - var_u[i][1];
+                var_v[i][1] = v;
             }
             break;
     }

@@ -33,7 +33,7 @@ int main() {
     const int nx(100); // 100
     const int ny(10); // 10
     const double dy = 0.1;
-    const double dx = 4.*dy ; // 3
+    const double dx = 3.*dy ; // 3
     const double dt = 0.01;
     const double u_init = 1.;
     const double v_init = 0.;
@@ -105,8 +105,8 @@ int main() {
     initialize(v,nx, ny,v_init);
     initialize(p,nx, ny,p_init);
     initialize(phi,nx,ny,0) ;
-    cout << "------------v-------------" <<"\n" ;
-    visualize(v,nx,ny);
+    cout << "------------u-------------" <<"\n" ;
+    visualize(u,nx,ny);
     // West
     inflow_condition(u, v, nx, ny, 'w', u_init, v_init);
     pressure_condition(p, nx, ny, dx, dy, 'w', 'N', p_init);
@@ -124,6 +124,8 @@ int main() {
     pressure_condition(p, nx, ny, dx, dy, 's', 'N', p_init);
     phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
     for (int num_iter = 1; num_iter <= iter; num_iter++) {
+        cout << "------------u-------------" <<"\n" ;
+        visualize(u,nx,ny);
         if (num_iter == 1 || num_iter%5 == 0) {
             cout << "time step : " << num_iter <<"\n" ;
             cout << "------------u-------------" <<"\n" ;
@@ -131,9 +133,9 @@ int main() {
             paraview(num_iter ,"p" , p, nx, ny, dx, dy);
             paraview(num_iter ,"F" , F, nx, ny, dx, dy);
             paraview(num_iter ,"u" , u, nx, ny, dx, dy);
-            paraview(num_iter ,"v" , v, nx, ny, dx, dy) ;
-            paraview(num_iter ,"phi" , phi, nx, ny, dx, dy);
-        }
+        paraview(num_iter ,"v" , v, nx, ny, dx, dy) ;
+        paraview(num_iter ,"phi" , phi, nx, ny, dx, dy);
+    }
         compute_F(F, u, v, nx, ny, dx, dy, dt, gamma, Re, g_x);
         compute_G(G, u, v, nx, ny, dx, dy, dt, gamma,Re, g_y);
         compute_RHS(RHS, F, G, nx, ny, dx, dy, dt);
@@ -144,8 +146,7 @@ int main() {
         outflow_condition(u ,v , nx, ny, 'e');
         noslip_condition(u ,v , nx, ny, 'n');
         noslip_condition(u ,v , nx, ny, 's');
-        cout << "------------v-------------" <<"\n" ;
-        visualize(v,nx,ny);
+
         compute_phi(phi,phi_new,u,v,nx,ny,dx,dy,dt,gamma,Re) ;
         update(phi,phi_new,nx,ny) ;
         phi_condition(phi,nx,ny,dx,dy,'w',phi_init) ;
