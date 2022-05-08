@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/compute_FG.dir/compute_FG.cpp.obj"
-  "CMakeFiles/compute_FG.dir/compute_FG.cpp.obj.d"
+  "CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj"
+  "CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj.d"
   "libcompute_FG.a"
   "libcompute_FG.pdb"
 )

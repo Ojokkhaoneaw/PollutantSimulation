@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/JirayuH/PollutantSimulation/compute_uv.cpp" "CMakeFiles/compute_uv.dir/compute_uv.cpp.obj" "gcc" "CMakeFiles/compute_uv.dir/compute_uv.cpp.obj.d"
+  "C:/Users/JirayuH/PollutantSimulation/2D/compute_uv.cpp" "CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj" "gcc" "CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj.d"
   )
 
 # Targets to which this target links.

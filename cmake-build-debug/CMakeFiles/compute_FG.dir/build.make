@@ -68,28 +68,28 @@ include CMakeFiles/compute_FG.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/compute_FG.dir/flags.make
 
-CMakeFiles/compute_FG.dir/compute_FG.cpp.obj: CMakeFiles/compute_FG.dir/flags.make
-CMakeFiles/compute_FG.dir/compute_FG.cpp.obj: ../compute_FG.cpp
-CMakeFiles/compute_FG.dir/compute_FG.cpp.obj: CMakeFiles/compute_FG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compute_FG.dir/compute_FG.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compute_FG.dir/compute_FG.cpp.obj -MF CMakeFiles\compute_FG.dir\compute_FG.cpp.obj.d -o CMakeFiles\compute_FG.dir\compute_FG.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\compute_FG.cpp
+CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj: CMakeFiles/compute_FG.dir/flags.make
+CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj: ../2D/compute_FG.cpp
+CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj: CMakeFiles/compute_FG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj -MF CMakeFiles\compute_FG.dir\2D\compute_FG.cpp.obj.d -o CMakeFiles\compute_FG.dir\2D\compute_FG.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\2D\compute_FG.cpp
 
-CMakeFiles/compute_FG.dir/compute_FG.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compute_FG.dir/compute_FG.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\compute_FG.cpp > CMakeFiles\compute_FG.dir\compute_FG.cpp.i
+CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\2D\compute_FG.cpp > CMakeFiles\compute_FG.dir\2D\compute_FG.cpp.i
 
-CMakeFiles/compute_FG.dir/compute_FG.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compute_FG.dir/compute_FG.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\compute_FG.cpp -o CMakeFiles\compute_FG.dir\compute_FG.cpp.s
+CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\2D\compute_FG.cpp -o CMakeFiles\compute_FG.dir\2D\compute_FG.cpp.s
 
 # Object files for target compute_FG
 compute_FG_OBJECTS = \
-"CMakeFiles/compute_FG.dir/compute_FG.cpp.obj"
+"CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj"
 
 # External object files for target compute_FG
 compute_FG_EXTERNAL_OBJECTS =
 
-libcompute_FG.a: CMakeFiles/compute_FG.dir/compute_FG.cpp.obj
+libcompute_FG.a: CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj
 libcompute_FG.a: CMakeFiles/compute_FG.dir/build.make
 libcompute_FG.a: CMakeFiles/compute_FG.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcompute_FG.a"

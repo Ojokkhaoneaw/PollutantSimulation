@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/JirayuH/PollutantSimulation/compute_phi.cpp" "CMakeFiles/compute_phi.dir/compute_phi.cpp.obj" "gcc" "CMakeFiles/compute_phi.dir/compute_phi.cpp.obj.d"
+  "C:/Users/JirayuH/PollutantSimulation/2D/compute_phi.cpp" "CMakeFiles/compute_phi.dir/2D/compute_phi.cpp.obj" "gcc" "CMakeFiles/compute_phi.dir/2D/compute_phi.cpp.obj.d"
   )
 
 # Targets to which this target links.

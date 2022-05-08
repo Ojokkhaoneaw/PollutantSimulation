@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/math_diff.dir/math_diff.cpp.obj"
-  "CMakeFiles/math_diff.dir/math_diff.cpp.obj.d"
+  "CMakeFiles/math_diff.dir/2D/math_diff.cpp.obj"
+  "CMakeFiles/math_diff.dir/2D/math_diff.cpp.obj.d"
   "libmath_diff.a"
   "libmath_diff.pdb"
 )

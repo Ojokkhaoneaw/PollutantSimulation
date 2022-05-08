@@ -68,28 +68,28 @@ include CMakeFiles/compute_poisson.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/compute_poisson.dir/flags.make
 
-CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj: CMakeFiles/compute_poisson.dir/flags.make
-CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj: ../compute_poisson.cpp
-CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj: CMakeFiles/compute_poisson.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj -MF CMakeFiles\compute_poisson.dir\compute_poisson.cpp.obj.d -o CMakeFiles\compute_poisson.dir\compute_poisson.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\compute_poisson.cpp
+CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj: CMakeFiles/compute_poisson.dir/flags.make
+CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj: ../2D/compute_poisson.cpp
+CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj: CMakeFiles/compute_poisson.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj -MF CMakeFiles\compute_poisson.dir\2D\compute_poisson.cpp.obj.d -o CMakeFiles\compute_poisson.dir\2D\compute_poisson.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\2D\compute_poisson.cpp
 
-CMakeFiles/compute_poisson.dir/compute_poisson.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compute_poisson.dir/compute_poisson.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\compute_poisson.cpp > CMakeFiles\compute_poisson.dir\compute_poisson.cpp.i
+CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\2D\compute_poisson.cpp > CMakeFiles\compute_poisson.dir\2D\compute_poisson.cpp.i
 
-CMakeFiles/compute_poisson.dir/compute_poisson.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compute_poisson.dir/compute_poisson.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\compute_poisson.cpp -o CMakeFiles\compute_poisson.dir\compute_poisson.cpp.s
+CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\2D\compute_poisson.cpp -o CMakeFiles\compute_poisson.dir\2D\compute_poisson.cpp.s
 
 # Object files for target compute_poisson
 compute_poisson_OBJECTS = \
-"CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj"
+"CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj"
 
 # External object files for target compute_poisson
 compute_poisson_EXTERNAL_OBJECTS =
 
-libcompute_poisson.a: CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj
+libcompute_poisson.a: CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj
 libcompute_poisson.a: CMakeFiles/compute_poisson.dir/build.make
 libcompute_poisson.a: CMakeFiles/compute_poisson.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcompute_poisson.a"

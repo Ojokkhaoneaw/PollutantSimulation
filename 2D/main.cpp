@@ -24,14 +24,14 @@ void poisson(double **var_p, double **var_p_new, double **RHS, int nx, int ny, d
 
 
 void compute_uv(double **var_u, double **var_v, double **var_F, double **var_G, double **var_p_new, int nx, int ny, double dx, double dy, double dt);
-void compute_phi(double **var_phi,double **var_phinew,double **var_u, double **var_v,  int nx, int ny,double dx,double dy,double dt,double gamma, double Re) ;
+void compute_phi(double **var_phi,double **var_phi_new,double **var_u, double **var_v,  int nx, int ny,double dx,double dy,double dt,double gamma, double Re) ;
 
 
 int main() {
     const int iter(5000);
     const int iter_max(1000);
-    const int nx(100); // 100
-    const int ny(10); // 10
+    const int nx(99); // 100
+    const int ny(9); // 10
     const double dy = 0.1;
     const double dx = 3.*dy ; // 3
     const double dt = 0.01;
@@ -39,7 +39,7 @@ int main() {
     const double v_init = 0.;
     const double p_init = 0.;
     const double phi_init = 1. ;
-    const double Re = 150.; // Reynolds number
+    const double Re = 300.; // Reynolds number
     const double g_x = 0.;
     const double g_y = 0.;
     const double gamma = 0.5; // Upwind differencing factor
@@ -105,8 +105,6 @@ int main() {
     initialize(v,nx, ny,v_init);
     initialize(p,nx, ny,p_init);
     initialize(phi,nx,ny,0) ;
-    cout << "------------u-------------" <<"\n" ;
-    visualize(u,nx,ny);
     // West
     inflow_condition(u, v, nx, ny, 'w', u_init, v_init);
     pressure_condition(p, nx, ny, dx, dy, 'w', 'N', p_init);
@@ -124,8 +122,8 @@ int main() {
     pressure_condition(p, nx, ny, dx, dy, 's', 'N', p_init);
     phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
     for (int num_iter = 1; num_iter <= iter; num_iter++) {
-        cout << "------------u-------------" <<"\n" ;
-        visualize(u,nx,ny);
+//        cout << "------------u-------------" <<"\n" ;
+//        visualize(u,nx,ny);
         if (num_iter == 1 || num_iter%5 == 0) {
             cout << "time step : " << num_iter <<"\n" ;
             cout << "------------u-------------" <<"\n" ;
@@ -133,8 +131,8 @@ int main() {
             paraview(num_iter ,"p" , p, nx, ny, dx, dy);
             paraview(num_iter ,"F" , F, nx, ny, dx, dy);
             paraview(num_iter ,"u" , u, nx, ny, dx, dy);
-        paraview(num_iter ,"v" , v, nx, ny, dx, dy) ;
-        paraview(num_iter ,"phi" , phi, nx, ny, dx, dy);
+            paraview(num_iter ,"v" , v, nx, ny, dx, dy) ;
+            paraview(num_iter ,"phi" , phi, nx, ny, dx, dy);
     }
         compute_F(F, u, v, nx, ny, dx, dy, dt, gamma, Re, g_x);
         compute_G(G, u, v, nx, ny, dx, dy, dt, gamma,Re, g_y);

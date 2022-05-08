@@ -116,6 +116,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named 3DSimulation
+
+# Build rule for target.
+3DSimulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 3DSimulation
+.PHONY : 3DSimulation
+
+# fast build rule for target.
+3DSimulation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3DSimulation.dir\build.make CMakeFiles/3DSimulation.dir/build
+.PHONY : 3DSimulation/fast
+
+#=============================================================================
 # Target rules for targets named PollutantSimulation
 
 # Build rule for target.
@@ -206,173 +219,197 @@ math_diff/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/build
 .PHONY : math_diff/fast
 
-Libraries.obj: Libraries.cpp.obj
-.PHONY : Libraries.obj
+2D/Libraries.obj: 2D/Libraries.cpp.obj
+.PHONY : 2D/Libraries.obj
 
 # target to build an object file
-Libraries.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/Libraries.cpp.obj
-.PHONY : Libraries.cpp.obj
+2D/Libraries.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/2D/Libraries.cpp.obj
+.PHONY : 2D/Libraries.cpp.obj
 
-Libraries.i: Libraries.cpp.i
-.PHONY : Libraries.i
+2D/Libraries.i: 2D/Libraries.cpp.i
+.PHONY : 2D/Libraries.i
 
 # target to preprocess a source file
-Libraries.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/Libraries.cpp.i
-.PHONY : Libraries.cpp.i
+2D/Libraries.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/2D/Libraries.cpp.i
+.PHONY : 2D/Libraries.cpp.i
 
-Libraries.s: Libraries.cpp.s
-.PHONY : Libraries.s
+2D/Libraries.s: 2D/Libraries.cpp.s
+.PHONY : 2D/Libraries.s
 
 # target to generate assembly for a file
-Libraries.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/Libraries.cpp.s
-.PHONY : Libraries.cpp.s
+2D/Libraries.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/2D/Libraries.cpp.s
+.PHONY : 2D/Libraries.cpp.s
 
-compute_FG.obj: compute_FG.cpp.obj
-.PHONY : compute_FG.obj
+2D/compute_FG.obj: 2D/compute_FG.cpp.obj
+.PHONY : 2D/compute_FG.obj
 
 # target to build an object file
-compute_FG.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/compute_FG.cpp.obj
-.PHONY : compute_FG.cpp.obj
+2D/compute_FG.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj
+.PHONY : 2D/compute_FG.cpp.obj
 
-compute_FG.i: compute_FG.cpp.i
-.PHONY : compute_FG.i
+2D/compute_FG.i: 2D/compute_FG.cpp.i
+.PHONY : 2D/compute_FG.i
 
 # target to preprocess a source file
-compute_FG.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/compute_FG.cpp.i
-.PHONY : compute_FG.cpp.i
+2D/compute_FG.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.i
+.PHONY : 2D/compute_FG.cpp.i
 
-compute_FG.s: compute_FG.cpp.s
-.PHONY : compute_FG.s
+2D/compute_FG.s: 2D/compute_FG.cpp.s
+.PHONY : 2D/compute_FG.s
 
 # target to generate assembly for a file
-compute_FG.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/compute_FG.cpp.s
-.PHONY : compute_FG.cpp.s
+2D/compute_FG.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.s
+.PHONY : 2D/compute_FG.cpp.s
 
-compute_phi.obj: compute_phi.cpp.obj
-.PHONY : compute_phi.obj
+2D/compute_phi.obj: 2D/compute_phi.cpp.obj
+.PHONY : 2D/compute_phi.obj
 
 # target to build an object file
-compute_phi.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/compute_phi.cpp.obj
-.PHONY : compute_phi.cpp.obj
+2D/compute_phi.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/2D/compute_phi.cpp.obj
+.PHONY : 2D/compute_phi.cpp.obj
 
-compute_phi.i: compute_phi.cpp.i
-.PHONY : compute_phi.i
+2D/compute_phi.i: 2D/compute_phi.cpp.i
+.PHONY : 2D/compute_phi.i
 
 # target to preprocess a source file
-compute_phi.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/compute_phi.cpp.i
-.PHONY : compute_phi.cpp.i
+2D/compute_phi.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/2D/compute_phi.cpp.i
+.PHONY : 2D/compute_phi.cpp.i
 
-compute_phi.s: compute_phi.cpp.s
-.PHONY : compute_phi.s
+2D/compute_phi.s: 2D/compute_phi.cpp.s
+.PHONY : 2D/compute_phi.s
 
 # target to generate assembly for a file
-compute_phi.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/compute_phi.cpp.s
-.PHONY : compute_phi.cpp.s
+2D/compute_phi.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/2D/compute_phi.cpp.s
+.PHONY : 2D/compute_phi.cpp.s
 
-compute_poisson.obj: compute_poisson.cpp.obj
-.PHONY : compute_poisson.obj
+2D/compute_poisson.obj: 2D/compute_poisson.cpp.obj
+.PHONY : 2D/compute_poisson.obj
 
 # target to build an object file
-compute_poisson.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj
-.PHONY : compute_poisson.cpp.obj
+2D/compute_poisson.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj
+.PHONY : 2D/compute_poisson.cpp.obj
 
-compute_poisson.i: compute_poisson.cpp.i
-.PHONY : compute_poisson.i
+2D/compute_poisson.i: 2D/compute_poisson.cpp.i
+.PHONY : 2D/compute_poisson.i
 
 # target to preprocess a source file
-compute_poisson.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/compute_poisson.cpp.i
-.PHONY : compute_poisson.cpp.i
+2D/compute_poisson.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.i
+.PHONY : 2D/compute_poisson.cpp.i
 
-compute_poisson.s: compute_poisson.cpp.s
-.PHONY : compute_poisson.s
+2D/compute_poisson.s: 2D/compute_poisson.cpp.s
+.PHONY : 2D/compute_poisson.s
 
 # target to generate assembly for a file
-compute_poisson.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/compute_poisson.cpp.s
-.PHONY : compute_poisson.cpp.s
+2D/compute_poisson.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.s
+.PHONY : 2D/compute_poisson.cpp.s
 
-compute_uv.obj: compute_uv.cpp.obj
-.PHONY : compute_uv.obj
+2D/compute_uv.obj: 2D/compute_uv.cpp.obj
+.PHONY : 2D/compute_uv.obj
 
 # target to build an object file
-compute_uv.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/compute_uv.cpp.obj
-.PHONY : compute_uv.cpp.obj
+2D/compute_uv.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj
+.PHONY : 2D/compute_uv.cpp.obj
 
-compute_uv.i: compute_uv.cpp.i
-.PHONY : compute_uv.i
+2D/compute_uv.i: 2D/compute_uv.cpp.i
+.PHONY : 2D/compute_uv.i
 
 # target to preprocess a source file
-compute_uv.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/compute_uv.cpp.i
-.PHONY : compute_uv.cpp.i
+2D/compute_uv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.i
+.PHONY : 2D/compute_uv.cpp.i
 
-compute_uv.s: compute_uv.cpp.s
-.PHONY : compute_uv.s
+2D/compute_uv.s: 2D/compute_uv.cpp.s
+.PHONY : 2D/compute_uv.s
 
 # target to generate assembly for a file
-compute_uv.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/compute_uv.cpp.s
-.PHONY : compute_uv.cpp.s
+2D/compute_uv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.s
+.PHONY : 2D/compute_uv.cpp.s
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+2D/main.obj: 2D/main.cpp.obj
+.PHONY : 2D/main.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+2D/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/2D/main.cpp.obj
+.PHONY : 2D/main.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+2D/main.i: 2D/main.cpp.i
+.PHONY : 2D/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main.cpp.i
-.PHONY : main.cpp.i
+2D/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/2D/main.cpp.i
+.PHONY : 2D/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+2D/main.s: 2D/main.cpp.s
+.PHONY : 2D/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/main.cpp.s
-.PHONY : main.cpp.s
+2D/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/2D/main.cpp.s
+.PHONY : 2D/main.cpp.s
 
-math_diff.obj: math_diff.cpp.obj
-.PHONY : math_diff.obj
+2D/math_diff.obj: 2D/math_diff.cpp.obj
+.PHONY : 2D/math_diff.obj
 
 # target to build an object file
-math_diff.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/math_diff.cpp.obj
-.PHONY : math_diff.cpp.obj
+2D/math_diff.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/2D/math_diff.cpp.obj
+.PHONY : 2D/math_diff.cpp.obj
 
-math_diff.i: math_diff.cpp.i
-.PHONY : math_diff.i
+2D/math_diff.i: 2D/math_diff.cpp.i
+.PHONY : 2D/math_diff.i
 
 # target to preprocess a source file
-math_diff.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/math_diff.cpp.i
-.PHONY : math_diff.cpp.i
+2D/math_diff.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/2D/math_diff.cpp.i
+.PHONY : 2D/math_diff.cpp.i
 
-math_diff.s: math_diff.cpp.s
-.PHONY : math_diff.s
+2D/math_diff.s: 2D/math_diff.cpp.s
+.PHONY : 2D/math_diff.s
 
 # target to generate assembly for a file
-math_diff.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/math_diff.cpp.s
-.PHONY : math_diff.cpp.s
+2D/math_diff.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/2D/math_diff.cpp.s
+.PHONY : 2D/math_diff.cpp.s
+
+3D/main3D.obj: 3D/main3D.cpp.obj
+.PHONY : 3D/main3D.obj
+
+# target to build an object file
+3D/main3D.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3DSimulation.dir\build.make CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj
+.PHONY : 3D/main3D.cpp.obj
+
+3D/main3D.i: 3D/main3D.cpp.i
+.PHONY : 3D/main3D.i
+
+# target to preprocess a source file
+3D/main3D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3DSimulation.dir\build.make CMakeFiles/3DSimulation.dir/3D/main3D.cpp.i
+.PHONY : 3D/main3D.cpp.i
+
+3D/main3D.s: 3D/main3D.cpp.s
+.PHONY : 3D/main3D.s
+
+# target to generate assembly for a file
+3D/main3D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3DSimulation.dir\build.make CMakeFiles/3DSimulation.dir/3D/main3D.cpp.s
+.PHONY : 3D/main3D.cpp.s
 
 # Help Target
 help:
@@ -382,6 +419,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... 3DSimulation
 	@echo ... Libraries
 	@echo ... PollutantSimulation
 	@echo ... compute_FG
@@ -389,27 +427,30 @@ help:
 	@echo ... compute_poisson
 	@echo ... compute_uv
 	@echo ... math_diff
-	@echo ... Libraries.obj
-	@echo ... Libraries.i
-	@echo ... Libraries.s
-	@echo ... compute_FG.obj
-	@echo ... compute_FG.i
-	@echo ... compute_FG.s
-	@echo ... compute_phi.obj
-	@echo ... compute_phi.i
-	@echo ... compute_phi.s
-	@echo ... compute_poisson.obj
-	@echo ... compute_poisson.i
-	@echo ... compute_poisson.s
-	@echo ... compute_uv.obj
-	@echo ... compute_uv.i
-	@echo ... compute_uv.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... math_diff.obj
-	@echo ... math_diff.i
-	@echo ... math_diff.s
+	@echo ... 2D/Libraries.obj
+	@echo ... 2D/Libraries.i
+	@echo ... 2D/Libraries.s
+	@echo ... 2D/compute_FG.obj
+	@echo ... 2D/compute_FG.i
+	@echo ... 2D/compute_FG.s
+	@echo ... 2D/compute_phi.obj
+	@echo ... 2D/compute_phi.i
+	@echo ... 2D/compute_phi.s
+	@echo ... 2D/compute_poisson.obj
+	@echo ... 2D/compute_poisson.i
+	@echo ... 2D/compute_poisson.s
+	@echo ... 2D/compute_uv.obj
+	@echo ... 2D/compute_uv.i
+	@echo ... 2D/compute_uv.s
+	@echo ... 2D/main.obj
+	@echo ... 2D/main.i
+	@echo ... 2D/main.s
+	@echo ... 2D/math_diff.obj
+	@echo ... 2D/math_diff.i
+	@echo ... 2D/math_diff.s
+	@echo ... 3D/main3D.obj
+	@echo ... 3D/main3D.i
+	@echo ... 3D/main3D.s
 .PHONY : help
 
 

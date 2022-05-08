@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Libraries.dir/Libraries.cpp.obj"
-  "CMakeFiles/Libraries.dir/Libraries.cpp.obj.d"
+  "CMakeFiles/Libraries.dir/2D/Libraries.cpp.obj"
+  "CMakeFiles/Libraries.dir/2D/Libraries.cpp.obj.d"
   "libLibraries.a"
   "libLibraries.pdb"
 )

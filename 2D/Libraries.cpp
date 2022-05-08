@@ -70,7 +70,7 @@ void paraview(int num_iter, const string& varName, double **var, int nx, int ny,
 
     //Grid
     myfile << "DATASET STRUCTURED_GRID" << endl;
-    myfile << "DIMENSIONS"<<" "<< nx+2 << " " << 1 << " " << ny+2 << " " << endl;
+    myfile << "DIMENSIONS"<<" "<< nx+2 << " " << ny+2 << " " << 1 << " " << endl;
     myfile << "POINTS"<<" "<< (nx+2)*(ny+2) <<" " << "double" << endl;
     for (int j = 0; j <= ny + 1; j++) {
         for (int i = 0; i <= nx + 1; i++) {

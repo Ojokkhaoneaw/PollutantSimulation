@@ -62,6 +62,7 @@ CMAKE_BINARY_DIR = C:\Users\JirayuH\PollutantSimulation\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/3DSimulation.dir/all
 all: CMakeFiles/PollutantSimulation.dir/all
 all: CMakeFiles/compute_FG.dir/all
 all: CMakeFiles/Libraries.dir/all
@@ -76,6 +77,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/3DSimulation.dir/clean
 clean: CMakeFiles/PollutantSimulation.dir/clean
 clean: CMakeFiles/compute_FG.dir/clean
 clean: CMakeFiles/Libraries.dir/clean
@@ -84,6 +86,32 @@ clean: CMakeFiles/compute_uv.dir/clean
 clean: CMakeFiles/compute_phi.dir/clean
 clean: CMakeFiles/math_diff.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/3DSimulation.dir
+
+# All Build rule for target.
+CMakeFiles/3DSimulation.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3DSimulation.dir\build.make CMakeFiles/3DSimulation.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3DSimulation.dir\build.make CMakeFiles/3DSimulation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target 3DSimulation"
+.PHONY : CMakeFiles/3DSimulation.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/3DSimulation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/3DSimulation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/3DSimulation.dir/rule
+
+# Convenience name for target.
+3DSimulation: CMakeFiles/3DSimulation.dir/rule
+.PHONY : 3DSimulation
+
+# clean rule for target.
+CMakeFiles/3DSimulation.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3DSimulation.dir\build.make CMakeFiles/3DSimulation.dir/clean
+.PHONY : CMakeFiles/3DSimulation.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/PollutantSimulation.dir
@@ -97,7 +125,7 @@ CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_phi.dir/all
 CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/math_diff.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PollutantSimulation.dir\build.make CMakeFiles/PollutantSimulation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target PollutantSimulation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target PollutantSimulation"
 .PHONY : CMakeFiles/PollutantSimulation.dir/all
 
 # Build rule for subdir invocation for target.
@@ -123,7 +151,7 @@ CMakeFiles/PollutantSimulation.dir/clean:
 CMakeFiles/compute_FG.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_FG.dir\build.make CMakeFiles/compute_FG.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target compute_FG"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target compute_FG"
 .PHONY : CMakeFiles/compute_FG.dir/all
 
 # Build rule for subdir invocation for target.
@@ -149,7 +177,7 @@ CMakeFiles/compute_FG.dir/clean:
 CMakeFiles/Libraries.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Libraries.dir\build.make CMakeFiles/Libraries.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Libraries"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target Libraries"
 .PHONY : CMakeFiles/Libraries.dir/all
 
 # Build rule for subdir invocation for target.
@@ -175,7 +203,7 @@ CMakeFiles/Libraries.dir/clean:
 CMakeFiles/compute_poisson.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_poisson.dir\build.make CMakeFiles/compute_poisson.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target compute_poisson"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target compute_poisson"
 .PHONY : CMakeFiles/compute_poisson.dir/all
 
 # Build rule for subdir invocation for target.
@@ -201,7 +229,7 @@ CMakeFiles/compute_poisson.dir/clean:
 CMakeFiles/compute_uv.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_uv.dir\build.make CMakeFiles/compute_uv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target compute_uv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=13,14 "Built target compute_uv"
 .PHONY : CMakeFiles/compute_uv.dir/all
 
 # Build rule for subdir invocation for target.
@@ -227,7 +255,7 @@ CMakeFiles/compute_uv.dir/clean:
 CMakeFiles/compute_phi.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\compute_phi.dir\build.make CMakeFiles/compute_phi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target compute_phi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target compute_phi"
 .PHONY : CMakeFiles/compute_phi.dir/all
 
 # Build rule for subdir invocation for target.
@@ -253,7 +281,7 @@ CMakeFiles/compute_phi.dir/clean:
 CMakeFiles/math_diff.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff.dir\build.make CMakeFiles/math_diff.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=13,14 "Built target math_diff"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target math_diff"
 .PHONY : CMakeFiles/math_diff.dir/all
 
 # Build rule for subdir invocation for target.

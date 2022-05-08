@@ -68,28 +68,28 @@ include CMakeFiles/compute_uv.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/compute_uv.dir/flags.make
 
-CMakeFiles/compute_uv.dir/compute_uv.cpp.obj: CMakeFiles/compute_uv.dir/flags.make
-CMakeFiles/compute_uv.dir/compute_uv.cpp.obj: ../compute_uv.cpp
-CMakeFiles/compute_uv.dir/compute_uv.cpp.obj: CMakeFiles/compute_uv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compute_uv.dir/compute_uv.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compute_uv.dir/compute_uv.cpp.obj -MF CMakeFiles\compute_uv.dir\compute_uv.cpp.obj.d -o CMakeFiles\compute_uv.dir\compute_uv.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\compute_uv.cpp
+CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj: CMakeFiles/compute_uv.dir/flags.make
+CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj: ../2D/compute_uv.cpp
+CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj: CMakeFiles/compute_uv.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj -MF CMakeFiles\compute_uv.dir\2D\compute_uv.cpp.obj.d -o CMakeFiles\compute_uv.dir\2D\compute_uv.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\2D\compute_uv.cpp
 
-CMakeFiles/compute_uv.dir/compute_uv.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compute_uv.dir/compute_uv.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\compute_uv.cpp > CMakeFiles\compute_uv.dir\compute_uv.cpp.i
+CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\2D\compute_uv.cpp > CMakeFiles\compute_uv.dir\2D\compute_uv.cpp.i
 
-CMakeFiles/compute_uv.dir/compute_uv.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compute_uv.dir/compute_uv.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\compute_uv.cpp -o CMakeFiles\compute_uv.dir\compute_uv.cpp.s
+CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\2D\compute_uv.cpp -o CMakeFiles\compute_uv.dir\2D\compute_uv.cpp.s
 
 # Object files for target compute_uv
 compute_uv_OBJECTS = \
-"CMakeFiles/compute_uv.dir/compute_uv.cpp.obj"
+"CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj"
 
 # External object files for target compute_uv
 compute_uv_EXTERNAL_OBJECTS =
 
-libcompute_uv.a: CMakeFiles/compute_uv.dir/compute_uv.cpp.obj
+libcompute_uv.a: CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj
 libcompute_uv.a: CMakeFiles/compute_uv.dir/build.make
 libcompute_uv.a: CMakeFiles/compute_uv.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcompute_uv.a"

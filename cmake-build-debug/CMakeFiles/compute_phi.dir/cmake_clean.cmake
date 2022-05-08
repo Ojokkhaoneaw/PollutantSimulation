@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/compute_phi.dir/compute_phi.cpp.obj"
-  "CMakeFiles/compute_phi.dir/compute_phi.cpp.obj.d"
+  "CMakeFiles/compute_phi.dir/2D/compute_phi.cpp.obj"
+  "CMakeFiles/compute_phi.dir/2D/compute_phi.cpp.obj.d"
   "libcompute_phi.a"
   "libcompute_phi.pdb"
 )

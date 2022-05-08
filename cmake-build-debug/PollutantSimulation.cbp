@@ -17,6 +17,50 @@
 					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="3DSimulation">
+				<Option output="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/3DSimulation.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 3DSimulation"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="3DSimulation/fast">
+				<Option output="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/3DSimulation.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 3DSimulation/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="PollutantSimulation">
 				<Option output="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/PollutantSimulation.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug"/>
@@ -193,16 +237,6 @@
 					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="compute_uv">
 				<Option output="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/libcompute_uv.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug"/>
@@ -335,6 +369,16 @@
 					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="C:/Users/JirayuH/PollutantSimulation/cmake-build-debug"/>
 				<Option type="4"/>
@@ -346,26 +390,29 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/Libraries.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/2D/Libraries.cpp">
 			<Option target="Libraries"/>
 		</Unit>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/compute_FG.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/2D/compute_FG.cpp">
 			<Option target="compute_FG"/>
 		</Unit>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/compute_phi.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/2D/compute_phi.cpp">
 			<Option target="compute_phi"/>
 		</Unit>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/compute_poisson.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/2D/compute_poisson.cpp">
 			<Option target="compute_poisson"/>
 		</Unit>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/compute_uv.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/2D/compute_uv.cpp">
 			<Option target="compute_uv"/>
 		</Unit>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/main.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/2D/main.cpp">
 			<Option target="PollutantSimulation"/>
 		</Unit>
-		<Unit filename="C:/Users/JirayuH/PollutantSimulation/math_diff.cpp">
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/2D/math_diff.cpp">
 			<Option target="math_diff"/>
+		</Unit>
+		<Unit filename="C:/Users/JirayuH/PollutantSimulation/3D/main3D.cpp">
+			<Option target="3DSimulation"/>
 		</Unit>
 		<Unit filename="C:/Users/JirayuH/PollutantSimulation/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

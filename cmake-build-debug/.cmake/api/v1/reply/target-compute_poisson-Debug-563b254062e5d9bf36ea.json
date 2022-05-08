@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libLibraries.a"
+			"path" : "libcompute_poisson.a"
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 10,
 				"parent" : 0
 			}
 		]
@@ -57,9 +57,9 @@
 			]
 		}
 	],
-	"id" : "Libraries::@6890427a1f51a3e7e1df",
-	"name" : "Libraries",
-	"nameOnDisk" : "libLibraries.a",
+	"id" : "compute_poisson::@6890427a1f51a3e7e1df",
+	"name" : "compute_poisson",
+	"nameOnDisk" : "libcompute_poisson.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -80,7 +80,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Libraries.cpp",
+			"path" : "2D/compute_poisson.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

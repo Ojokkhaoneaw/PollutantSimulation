@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/JirayuH/PollutantSimulation/compute_FG.cpp" "CMakeFiles/compute_FG.dir/compute_FG.cpp.obj" "gcc" "CMakeFiles/compute_FG.dir/compute_FG.cpp.obj.d"
+  "C:/Users/JirayuH/PollutantSimulation/2D/compute_FG.cpp" "CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj" "gcc" "CMakeFiles/compute_FG.dir/2D/compute_FG.cpp.obj.d"
   )
 
 # Targets to which this target links.

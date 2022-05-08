@@ -1,1 +1,1 @@
- libcompute_FG.a libcompute_poisson.a libcompute_uv.a libmath_diff.a libcompute_phi.a libLibraries.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+  -LC:/Users/JirayuH/PollutantSimulation/2D,3D  libcompute_FG.a libcompute_poisson.a libcompute_uv.a libmath_diff.a libcompute_phi.a libLibraries.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

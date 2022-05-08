@@ -1,2 +1,2 @@
-C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc libLibraries.a CMakeFiles/Libraries.dir/Libraries.cpp.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc libLibraries.a CMakeFiles/Libraries.dir/2D/Libraries.cpp.obj
 C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ranlib.exe libLibraries.a

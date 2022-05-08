@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/compute_uv.dir/compute_uv.cpp.obj"
-  "CMakeFiles/compute_uv.dir/compute_uv.cpp.obj.d"
+  "CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj"
+  "CMakeFiles/compute_uv.dir/2D/compute_uv.cpp.obj.d"
   "libcompute_uv.a"
   "libcompute_uv.pdb"
 )

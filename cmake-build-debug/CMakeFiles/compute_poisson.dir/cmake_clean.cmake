@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj"
-  "CMakeFiles/compute_poisson.dir/compute_poisson.cpp.obj.d"
+  "CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj"
+  "CMakeFiles/compute_poisson.dir/2D/compute_poisson.cpp.obj.d"
   "libcompute_poisson.a"
   "libcompute_poisson.pdb"
 )
