@@ -1,0 +1,1 @@
+  -LC:/Users/JirayuH/PollutantSimulation/2D,3D  libcompute_FG_3D.a libcompute_poisson_3D.a libcompute_uv_3D.a libmath_diff_3D.a libcompute_phi_3D.a libLibraries_3D.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

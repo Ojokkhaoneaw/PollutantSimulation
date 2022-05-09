@@ -68,28 +68,28 @@ include CMakeFiles/3DSimulation.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/3DSimulation.dir/flags.make
 
-CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj: CMakeFiles/3DSimulation.dir/flags.make
-CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj: ../3D/main3D.cpp
-CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj: CMakeFiles/3DSimulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj -MF CMakeFiles\3DSimulation.dir\3D\main3D.cpp.obj.d -o CMakeFiles\3DSimulation.dir\3D\main3D.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\3D\main3D.cpp
+CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.obj: CMakeFiles/3DSimulation.dir/flags.make
+CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.obj: ../3D/main_3D.cpp
+CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.obj: CMakeFiles/3DSimulation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\JirayuH\PollutantSimulation\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.obj -MF CMakeFiles\3DSimulation.dir\3D\main_3D.cpp.obj.d -o CMakeFiles\3DSimulation.dir\3D\main_3D.cpp.obj -c C:\Users\JirayuH\PollutantSimulation\3D\main_3D.cpp
 
-CMakeFiles/3DSimulation.dir/3D/main3D.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/3DSimulation.dir/3D/main3D.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\3D\main3D.cpp > CMakeFiles\3DSimulation.dir\3D\main3D.cpp.i
+CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\JirayuH\PollutantSimulation\3D\main_3D.cpp > CMakeFiles\3DSimulation.dir\3D\main_3D.cpp.i
 
-CMakeFiles/3DSimulation.dir/3D/main3D.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/3DSimulation.dir/3D/main3D.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\3D\main3D.cpp -o CMakeFiles\3DSimulation.dir\3D\main3D.cpp.s
+CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\JirayuH\PollutantSimulation\3D\main_3D.cpp -o CMakeFiles\3DSimulation.dir\3D\main_3D.cpp.s
 
 # Object files for target 3DSimulation
 3DSimulation_OBJECTS = \
-"CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj"
+"CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.obj"
 
 # External object files for target 3DSimulation
 3DSimulation_EXTERNAL_OBJECTS =
 
-3DSimulation.exe: CMakeFiles/3DSimulation.dir/3D/main3D.cpp.obj
+3DSimulation.exe: CMakeFiles/3DSimulation.dir/3D/main_3D.cpp.obj
 3DSimulation.exe: CMakeFiles/3DSimulation.dir/build.make
 3DSimulation.exe: CMakeFiles/3DSimulation.dir/linklibs.rsp
 3DSimulation.exe: CMakeFiles/3DSimulation.dir/objects1.rsp

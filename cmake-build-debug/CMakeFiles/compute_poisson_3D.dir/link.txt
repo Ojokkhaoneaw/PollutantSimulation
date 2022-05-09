@@ -1,0 +1,2 @@
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc libcompute_poisson_3D.a CMakeFiles/compute_poisson_3D.dir/3D/compute_poisson_3D.cpp.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ranlib.exe libcompute_poisson_3D.a

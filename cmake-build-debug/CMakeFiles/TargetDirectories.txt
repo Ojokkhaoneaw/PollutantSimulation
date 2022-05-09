@@ -1,10 +1,16 @@
-C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/3DSimulation.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/PollutantSimulation.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_poisson_3D.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_FG.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/Libraries.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_FG_3D.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_poisson.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_phi_3D.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_uv.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_phi.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/math_diff.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/Simulation3D.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/Libraries_3D.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/compute_uv_3D.dir
+C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/math_diff_3D.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/JirayuH/PollutantSimulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir

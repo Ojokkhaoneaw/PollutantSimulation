@@ -11,16 +11,7 @@ void initialize(double **var, int nx, int ny , double c) {
         }
     }
 }
-// Initialize variable
-void initialize3D(double ***var, int nx, int ny ,int nz, double c) {
-    for (int i = 0 ; i <= nx+1 ; i++){
-        for (int j = 0 ; j <= ny+1 ; j++) {
-            for (int k = 0 ; k <= nz+1 ; k++) {
-                var[i][j][k] = c ;
-            }
-        }
-    }
-}
+
 
 // Visualize variable
 void visualize(double **var, int nx, int ny) {
@@ -33,20 +24,6 @@ void visualize(double **var, int nx, int ny) {
     cout << "\n" ;
 }
 
-void visualize3D(double ***var, int nx, int ny, int nz){
-    for (int i = 0; i < nx+1; ++i) {
-        for (int j = 0; j < ny+1; ++j) {
-            for (int k = 0; k < nz+1; ++k) {
-                cout << var[i][j][k] << " " ;
-            }
-            cout << "\n" ;
-        }
-        cout << "\n" ;
-    }
-    cout << "\n" ;
-}
-
-
 
 //Update variable
 void update(double **var, double **var_new, int nx, int ny) {
@@ -56,7 +33,6 @@ void update(double **var, double **var_new, int nx, int ny) {
         }
     }
 }
-// incomplete
 
 void paraview(int num_iter, const string& varName, double **var, int nx, int ny, double dx, double dy) {
     string fileName = "var_" + varName + "_" + to_string(num_iter) + ".vtk";
@@ -91,51 +67,11 @@ void paraview(int num_iter, const string& varName, double **var, int nx, int ny,
     }
 }
 
-void paraview3D(int num_iter, const string& varName, double ***var, int nx, int ny, int nz, double dx, double dy,double dz) {
-    string fileName = "var3D_" + varName + "_" + to_string(num_iter) + ".vtk";
-    ofstream myfile;
-    myfile.open(fileName);
-
-    //Paraview Header
-    myfile << "# vtk DataFile Version 2.0" << endl;
-    myfile << "FlowField" << endl;
-    myfile << "ASCII" << endl;
-
-    //Grid
-    myfile << "DATASET STRUCTURED_GRID" << endl;
-    myfile << "DIMENSIONS"<<" "<< nx+2 << " " << ny+2 << " " << nz+2 << " " << endl;
-    myfile << "POINTS"<<" "<< (nx+2)*(ny+2)*(nz+2) <<" " << "double" << endl;
-    for (int i = 0; i <= nx+1; i++) {
-        for (int j = 0; j <= ny+1; j++) {
-            for(int k = 0; k <= nz+1; k++){
-                myfile << i*dx << " " << j*dy <<" "<< k*dz << endl;
-            }
-        }
-    }
-    myfile << endl;
-
-    //Data
-    myfile << "POINT_DATA"<< " " << (nx+2)*(ny+2)*(nz+2) << endl;
-    myfile << endl;
-    myfile << "SCALARS"<< " " << varName <<" " <<"double" << endl;
-    myfile << "LOOKUP_TABLE default" << endl;
-    for (int i = 0; i <= nx+1; i++) {
-        for (int j = 0; j <= ny+1; j++) {
-            for(int k = 0; k <= nz+1; k++){
-                myfile << var[i][j][k] << endl;
-            }
-        }
-    }
-}
-
-
-
-
 
 // Boundary Condition
 //1. Inflow - > Dirichlet Inflow Boundary Condition (u0 = 1 , phi(y<=0.5) = 1, phi(y>0.5) = 0)
 //2. Wall - > Dirichlet & No-slip Boundary Condition (Bottom Wall) (u = v = 0)
-//3. Outflow - > Neumann Outflow Boundary Condition (du_dx = dv_dx = 0)
+//3. Outflow - > Neumann Outflow Boundary Condition (du_dx_3D = dv_dx = 0)
 void noslip_condition(double **var_u, double **var_v, int nx, int ny, char side) {
     switch (side) {
         case 'w': // Left Side of Grid
