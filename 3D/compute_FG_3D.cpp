@@ -32,13 +32,11 @@ void compute_F_3D(double ***var_F, double ***var_u, double ***var_v, double ***v
       var_F[nx][j][k] = var_u[nx][j][k];
 
       for (int i = 1; i <= nx - 1; i++) {
-	    var_F[i][j][k] = var_u[i][j][k] +
-                        dt*((d2u_dx2_3D(var_u, i, j, k, dx) +
-                        d2u_dy2_3D(var_u, i, j, k, dy) +
-                        d2u_dz2_3D(var_u, i, j, k, dz)) / Re -
-                        du2_dx_3D(var_u, i, j, k, dx, gamma) -
-                        duv_dy_3D(var_u, var_v, i, j, k, dy, gamma) -
-                        duw_dz_3D(var_u, var_w, i, j, k, dz, gamma) + g_x);
+	    var_F[i][j][k] = var_u[i][j][k] + dt*(( d2u_dx2_3D(var_u, i, j, k, dx) +
+                                                d2u_dy2_3D(var_u, i, j, k, dy) +
+                                                d2u_dz2_3D(var_u, i, j, k, dz)) / Re -  du2_dx_3D(var_u, i, j, k, dx, gamma) -
+                                                                                        duv_dy_3D(var_u, var_v, i, j, k, dy, gamma) -
+                                                                                        duw_dz_3D(var_u, var_w, i, j, k, dz, gamma) + g_x);
       }      
     }
   }
@@ -49,13 +47,11 @@ void compute_G_3D(double ***var_G, double ***var_u, double ***var_v, double ***v
       var_G[i][0][k] = var_v[i][0][k];
       var_G[i][ny][k] = var_v[i][ny][k];
       for (int j = 1; j <= ny-1; j++) {
-	        var_G[i][j][k] = var_v[i][j][k] +
-            dt*((d2v_dx2_3D(var_v, i, j, k, dx) +
-            d2v_dy2_3D(var_v, i, j, k, dy) +
-            d2v_dz2_3D(var_v, i, j, k, dz)) / Re -
-            duv_dx_3D(var_u, var_v, i, j, k, dx, gamma) -
-            dv2_dy_3D(var_v, i, j, k, dy, gamma) -
-            dvw_dz_3D(var_v, var_w, i, j, k, dz, gamma) + g_y);
+	        var_G[i][j][k] = var_v[i][j][k] +   dt*((d2v_dx2_3D(var_v, i, j, k, dx) +
+                                                     d2v_dy2_3D(var_v, i, j, k, dy) +
+                                                     d2v_dz2_3D(var_v, i, j, k, dz)) / Re - duv_dx_3D(var_u, var_v, i, j, k, dx, gamma) -
+                                                                                            dv2_dy_3D(var_v, i, j, k, dy, gamma) -
+                                                                                            dvw_dz_3D(var_v, var_w, i, j, k, dz, gamma) + g_y);
       }
     }
   }
@@ -67,13 +63,11 @@ void compute_H_3D(double ***var_H, double ***var_u, double ***var_v, double ***v
       var_H[i][j][0] = var_w[i][j][0];
       var_H[i][j][nz] = var_w[i][j][nz];
       for (int k = 1; k <= nz-1; k++) {
-	    var_H[i][j][k] = var_w[i][j][k] +
-                         dt*((d2w_dx2_3D(var_w, i, j, k, dx) +
-                         d2w_dy2_3D(var_w, i, j, k, dy) +
-                         d2w_dz2_3D(var_w, i, j, k, dz)) / Re -
-                         duw_dx_3D(var_u, var_w, i, j, k, dx, gamma) -
-                         dw2_dz_3D(var_w, i, j, k, dz, gamma) -
-                         dvw_dy_3D(var_v, var_w, i, j, k, dy, gamma) + g_z);
+	    var_H[i][j][k] = var_w[i][j][k] + dt*((d2w_dx2_3D(var_w, i, j, k, dx) +
+                                               d2w_dy2_3D(var_w, i, j, k, dy) +
+                                               d2w_dz2_3D(var_w, i, j, k, dz)) / Re - duw_dx_3D(var_u, var_w, i, j, k, dx, gamma) -
+                                                                                      dw2_dz_3D(var_w, i, j, k, dz, gamma) -
+                                                                                      dvw_dy_3D(var_v, var_w, i, j, k, dy, gamma) + g_z);
       }
     }
   }
@@ -85,8 +79,8 @@ void compute_RHS_3D(double ***var_RHS,double ***var_F, double ***var_G, double *
     for (int i = 1; i <= nx; i++) {
       for (int k = 1; k <= nz; k++){
           var_RHS[i][j][k] = ((var_F[i][j][k]-var_F[i-1][j][k])/dx +
-                            (var_G[i][j][k]-var_G[i][j-1][k])/dy -
-                            (var_H[i][j][k]-var_H[i][j][k-1])/dz)/dt;
+                             (var_G[i][j][k]-var_G[i][j-1][k])/dy +
+                             (var_H[i][j][k]-var_H[i][j][k-1])/dz)/dt;
       }
     }
   }

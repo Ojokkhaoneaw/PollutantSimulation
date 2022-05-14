@@ -76,22 +76,26 @@ void noslip_condition(double **var_u, double **var_v, int nx, int ny, char side)
     switch (side) {
         case 'w': // Left Side of Grid
             for (int j = 0; j <= ny + 1; j++) {
+                var_u[0][j] = 0;
                 var_v[0][j] = -var_v[1][j];
             }
             break;
         case 'e': // Right Side of Grid
             for (int j = 0; j <= ny + 1; j++) {
+                var_u[nx][j] = 0;
                 var_v[nx+1][j] = -var_v[nx][j];
             }
             break;
         case 'n': // Top Side of Grid
             for (int i = 0; i <= nx + 1; i++) {
                 var_u[i][ny+1] = -var_u[i][ny] ;
+                var_v[i][ny] = 0;
             }
             break;
         case 's': // Bottom Side of Grid
             for (int i = 0; i <= nx + 1; i++) {
                 var_u[i][0] = -var_u[i][1] ;
+                var_v[i][ny] = 0;
             }
             break;
     }

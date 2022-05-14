@@ -59,7 +59,6 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
     pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'w', 'N', 0);
     pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'f', 'N', 0);
     pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'b', 'N', 0);
-    
     r_norm = sqrt(r_ijk/(nx*ny*nz));
   }  
 }
