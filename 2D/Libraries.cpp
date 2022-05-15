@@ -164,7 +164,7 @@ void noslip_condition(double **var_u, double **var_v, int nx, int ny, char side)
         case 's': // Bottom Side of Grid
             for (int i = 0; i <= nx + 1; i++) {
                 var_u[i][0] = -var_u[i][1] ;
-                var_v[i][ny] = 0;
+                var_v[i][0] = 0;
             }
             break;
     }
@@ -223,7 +223,7 @@ void inflow_condition(double **var_u, double **var_v, int nx, int ny, char side,
         case 's':
             for (int i = 0; i <= nx + 1; i++) {
                 var_u[i][0] = 2*u - var_u[i][1];
-                var_v[i][1] = v;
+                var_v[i][0] = v;
             }
             break;
     }
@@ -265,7 +265,7 @@ void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, ch
                     break;
                 case 'n':
                     for (int i = 0; i <= nx + 1; i++) {
-                        var_P[i][0] = var_P[i][1];
+                        var_P[i][ny+1] = var_P[i][ny];
                     }
                     break;
                 case 'e':
@@ -275,7 +275,7 @@ void pressure_condition(double **var_P, int nx, int ny, double dx, double dy, ch
                     break;
                 case 's':
                     for (int i = 0; i <= nx + 1; i++) {
-                        var_P[i][ny+1] = var_P[i][ny];
+                        var_P[i][0] = var_P[i][1];
                     }
                     break;
             }

@@ -28,7 +28,7 @@ int main() {
     const int start_iter = 1 ;
     const int iter = 150;
     const int iter_max = 1000;
-    const int D  = 1 ;
+    const int D  = 3 ;
     const int nx = 20 * D;
     const int ny = 15 * D;
     const int nz = 10 * D;

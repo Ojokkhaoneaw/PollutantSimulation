@@ -110,7 +110,7 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
         case 'e': //
             for (int j = 1; j <= ny ; j++) {
                 for(int k = 1 ; k <= nz ; k++ ) {
-                    var_u[nx + 1][j][k] = 0 ;
+                    var_u[nx][j][k] = 0 ;
                     var_v[nx + 1][j][k] = -var_v[nx][j][k];
                     var_w[nx + 1][j][k] = -var_w[nx][j][k];
                 }
@@ -120,7 +120,7 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             for (int i = 1; i <= nx; i++) {
                 for (int k = 1; k <= nz; k++) {
                     var_u[i][ny + 1][k] = -var_u[i][ny][k];
-                    var_v[i][ny + 1][k] = 0;
+                    var_v[i][ny][k] = 0;
                     var_w[i][ny + 1][k] = -var_w[i][ny][k]  ;
                 }
             }
@@ -138,7 +138,7 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             for (int i = 1; i <= nx; i++) {
                 for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][0] = -var_u[i][j][1];
-                    var_v[i][j][0] = -var_w[i][j][1];
+                    var_v[i][j][0] = -var_v[i][j][1];
                     var_w[i][j][0] = 0;
                 }
             }
@@ -147,8 +147,8 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             for (int i = 1; i <= nx; i++) {
                 for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][nz+1] = -var_u[i][j][nz];
-                    var_w[i][j][nz+1] = -var_w[i][j][nz];
-                    var_w[i][j][nz+1] = 0;
+                    var_v[i][j][nz+1] = -var_v[i][j][nz];
+                    var_w[i][j][nz] = 0;
                 }
             }
             break;

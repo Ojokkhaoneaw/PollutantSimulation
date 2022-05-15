@@ -26,8 +26,8 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
                var_p_new[0][j][k] = var_p[1][j][k];
                var_p_new[nx+1][j][k] = var_p[nx][j][k];
 
-               var_p_new[i][j][0] = var_p[1][j][1];
-               var_p_new[i][j][nz+1] = var_p[nx][j][nz];
+               var_p_new[i][j][0] = var_p[i][j][1];
+               var_p_new[i][j][nz+1] = var_p[i][j][nz];
 
                if (i==1) { e=1; w=0; }
                else if (i==nx) { e=0; w=1; }
