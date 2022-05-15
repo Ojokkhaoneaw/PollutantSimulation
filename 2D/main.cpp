@@ -7,6 +7,9 @@ void visualize(double **var, int nx, int ny) ;
 
 void update(double **var, double **var_new, int nx, int ny) ;
 void paraview(int num_iter, const string& varName, double **var, int nx, int ny, double dx, double dy) ;
+void paraview_vector(int num_iter, double **var_u,double **var_v,double**var_p ,double**var_phi, int nx, int ny, double dx, double dy) ;
+void save_restartfile(int num_iter, const string& varName, double **var, int nx, int ny) ;
+void read_restartfile(int start_num, const string& varName, double **var, int nx, int ny) ;
 
 void noslip_condition(double **var_u, double **var_v, int nx, int ny, char wall);
 void outflow_condition(double **var_u, double **var_v, int nx, int ny, char wall);
@@ -28,10 +31,11 @@ void compute_phi(double **var_phi,double **var_phi_new,double **var_u, double **
 
 
 int main() {
-    const int iter(5000);
-    const int iter_max(1000);
-    const int nx(99); // 100
-    const int ny(9); // 10
+    const int start_iter = 0 ;
+    const int iter = 5000;
+    const int iter_max = 1000;
+    const int nx = 100; // 100
+    const int ny = 11; // 10
     const double dy = 0.1;
     const double dx = 3.*dy ; // 3
     const double dt = 0.01;
@@ -121,19 +125,22 @@ int main() {
     noslip_condition(u, v, nx, ny, 's');
     pressure_condition(p, nx, ny, dx, dy, 's', 'N', p_init);
     phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
-    for (int num_iter = 1; num_iter <= iter; num_iter++) {
+
+    if (start_iter != 0){
+        read_restartfile(start_iter,"F", F, nx, ny) ;
+        read_restartfile(start_iter,"G", G, nx, ny) ;
+        read_restartfile(start_iter,"RHS", RHS, nx, ny) ;
+        read_restartfile(start_iter,"p", p, nx, ny) ;
+        read_restartfile(start_iter,"p_new", p_new, nx, ny) ;
+        read_restartfile(start_iter,"u", u, nx, ny) ;
+        read_restartfile(start_iter,"v", v, nx, ny) ;
+        read_restartfile(start_iter,"phi", phi, nx, ny) ;
+        read_restartfile(start_iter,"phi_new", phi_new, nx, ny) ;
+    }
+    for (int num_iter = start_iter; num_iter <= iter; num_iter++) {
 //        cout << "------------u-------------" <<"\n" ;
 //        visualize(u,nx,ny);
-        if (num_iter == 1 || num_iter%5 == 0) {
-            cout << "time step : " << num_iter <<"\n" ;
-            cout << "------------u-------------" <<"\n" ;
-            visualize(u,nx,ny);
-            paraview(num_iter ,"p" , p, nx, ny, dx, dy);
-            paraview(num_iter ,"F" , F, nx, ny, dx, dy);
-            paraview(num_iter ,"u" , u, nx, ny, dx, dy);
-            paraview(num_iter ,"v" , v, nx, ny, dx, dy) ;
-            paraview(num_iter ,"phi" , phi, nx, ny, dx, dy);
-    }
+
         compute_F(F, u, v, nx, ny, dx, dy, dt, gamma, Re, g_x);
         compute_G(G, u, v, nx, ny, dx, dy, dt, gamma,Re, g_y);
         compute_RHS(RHS, F, G, nx, ny, dx, dy, dt);
@@ -151,5 +158,28 @@ int main() {
         phi_condition(phi,nx,ny,dx,dy,'e',phi_init) ;
         phi_condition(phi,nx,ny,dx,dy,'n',phi_init) ;
         phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
+        if(num_iter%1000 == 0){
+            save_restartfile(num_iter,"F", F, nx, ny) ;
+            save_restartfile(num_iter,"G", G, nx, ny) ;
+            save_restartfile(num_iter,"RHS", RHS, nx, ny) ;
+            save_restartfile(num_iter,"p", p, nx, ny) ;
+            save_restartfile(num_iter,"p_new", p_new, nx, ny) ;
+            save_restartfile(num_iter,"u", u, nx, ny) ;
+            save_restartfile(num_iter,"v", v, nx, ny) ;
+            save_restartfile(num_iter,"phi", phi, nx, ny) ;
+            save_restartfile(num_iter,"phi_new", phi_new, nx, ny) ;
+
+        }
+        if (num_iter == 0 || num_iter%5 == 0) {
+            cout << "time step : " << num_iter <<"\n" ;
+//            cout << "------------u-------------" <<"\n" ;
+//            visualize(u,nx,ny);
+//            paraview(num_iter ,"p" , p, nx, ny, dx, dy);
+//            paraview(num_iter ,"F" , F, nx, ny, dx, dy);
+//            paraview(num_iter ,"u" , u, nx, ny, dx, dy);
+//            paraview(num_iter ,"v" , v, nx, ny, dx, dy) ;
+//            paraview(num_iter ,"phi" , phi, nx, ny, dx, dy);
+//            paraview_vector(num_iter, u, v, p, phi, nx, ny, dx, dy) ;
+        }
     }
 }

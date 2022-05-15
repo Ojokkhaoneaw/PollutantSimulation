@@ -26,22 +26,22 @@ void compute_uv_3D(double ***var_u, double ***var_v, double ***var_w, double ***
 
 int main() {
     const int start_iter = 1 ;
-    const int iter = 500;
+    const int iter = 150;
     const int iter_max = 1000;
     const int D  = 1 ;
     const int nx = 20 * D;
-    const int ny = 10 * D;
-    const int nz = 15 * D;
-    const double dy = 1.;
+    const int ny = 15 * D;
+    const int nz = 10 * D;
+    const double dy = 0.01;
     const double dx = dy ;
     const double dz = dy ;// 3
     const double dt = 0.01;
-    const double u_init = 1.;
+    const double u_init = 0.5;
     const double v_init = 0.;
     const double w_init = 0.;
     const double p_init = 0.;
     const double phi_init = 1. ;
-    const double Re = 1500.; // Reynolds number
+    const double Re = 1000.; // Reynolds number
     const double g_x = 0.;
     const double g_y = 0.;
     const double g_z = 0.;
@@ -173,7 +173,7 @@ int main() {
     pressure_condition_3D(p, nx, ny, nz, dx, dy, dz, 'n', 'N', p_init);
 //    phi_condition_3D(phi,nx,ny,dx,dy,'n',phi_init) ;
     // South
-    noslip_condition_3D(u, v,w, nx, ny, nz, 's');
+    noslip_condition_3D(u,v,w, nx, ny, nz, 's');
     pressure_condition_3D(p, nx, ny, nz, dx, dy, dz, 's', 'N', p_init);
 //    phi_condition_3D(phi,nx,ny,dx,dy,'s',phi_init) ;
     // Front
@@ -187,13 +187,14 @@ int main() {
     for (int num_iter = start_iter ; num_iter <= iter; num_iter++) {
         if (num_iter == 1 || num_iter%1 == 0) {
             cout << "time step : " << num_iter <<"\n" ;
-            paraview_3D(num_iter ,"p" , p, nx, ny, nz, dx, dy, dz);
-            paraview_3D(num_iter ,"F" , F, nx, ny, nz, dx, dy, dz);
-            paraview_3D(num_iter ,"G" , F, nx, ny, nz, dx, dy, dz);
-            paraview_3D(num_iter ,"H" , F, nx, ny, nz, dx, dy, dz);
-            paraview_3D(num_iter ,"RHS" , F, nx, ny, nz, dx, dy, dz);
+//            paraview_3D(num_iter ,"p" , p, nx, ny, nz, dx, dy, dz);
+//            paraview_3D(num_iter ,"F" , F, nx, ny, nz, dx, dy, dz);
+//            paraview_3D(num_iter ,"G" , F, nx, ny, nz, dx, dy, dz);
+//            paraview_3D(num_iter ,"H" , F, nx, ny, nz, dx, dy, dz);
+//            paraview_3D(num_iter ,"RHS" , F, nx, ny, nz, dx, dy, dz);
             paraview_3D(num_iter ,"u" , u, nx, ny, nz, dx, dy, dz);
             paraview_3D(num_iter ,"v" , v, nx, ny, nz, dx, dy, dz) ;
+            paraview_3D(num_iter ,"w" , w, nx, ny, nz, dx, dy, dz) ;
 //            paraview_3D(num_iter ,"phi" , phi, nx, ny, dx, dy);
         }
 

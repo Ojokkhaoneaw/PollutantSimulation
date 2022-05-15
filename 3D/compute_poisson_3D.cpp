@@ -54,7 +54,7 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
     // Update & BC Presure
     update_3D(var_p, var_p_new, nx, ny, nz);
     pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'n', 'N', 0);
-    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'e', 'D', 0);
+    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'e', 'N', 0);
     pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 's', 'N', 0);
     pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'w', 'N', 0);
     pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'f', 'N', 0);

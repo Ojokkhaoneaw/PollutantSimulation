@@ -66,8 +66,8 @@ void compute_H_3D(double ***var_H, double ***var_u, double ***var_v, double ***v
 	    var_H[i][j][k] = var_w[i][j][k] + dt*((d2w_dx2_3D(var_w, i, j, k, dx) +
                                                d2w_dy2_3D(var_w, i, j, k, dy) +
                                                d2w_dz2_3D(var_w, i, j, k, dz)) / Re - duw_dx_3D(var_u, var_w, i, j, k, dx, gamma) -
-                                                                                      dw2_dz_3D(var_w, i, j, k, dz, gamma) -
-                                                                                      dvw_dy_3D(var_v, var_w, i, j, k, dy, gamma) + g_z);
+                                                                                      dvw_dy_3D(var_v, var_w, i, j, k, dy, gamma) -
+                                                                                      dw2_dz_3D(var_w, i, j, k, dz, gamma) + g_z);
       }
     }
   }

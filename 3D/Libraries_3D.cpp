@@ -99,8 +99,8 @@ void read_restartfile_3D(int start_num, const string& varName, double ***var, in
 void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int nx, int ny, int nz, char side) {
     switch (side) {
         case 'w': // yz plane of grid cell
-            for (int j = 0; j <= ny + 1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny ; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[0][j][k] = 0 ;
                     var_v[0][j][k] = -var_v[1][j][k];
                     var_w[0][j][k] = -var_w[1][j][k];
@@ -108,47 +108,47 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'e': //
-            for (int j = 0; j <= ny + 1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
-                    var_u[0][j][k] = 0 ;
+            for (int j = 1; j <= ny ; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
+                    var_u[nx + 1][j][k] = 0 ;
                     var_v[nx + 1][j][k] = -var_v[nx][j][k];
                     var_w[nx + 1][j][k] = -var_w[nx][j][k];
                 }
             }
             break;
-        case 'n': //
-            for (int i = 0; i <= nx + 1; i++) {
-                for (int k = 0; k <= nz + 1; k++) {
+        case 'n': // xz plane of grid cell
+            for (int i = 1; i <= nx; i++) {
+                for (int k = 1; k <= nz; k++) {
                     var_u[i][ny + 1][k] = -var_u[i][ny][k];
-                    var_v[i][ny + 1][k] = -var_v[i][ny][k];
-                    var_w[i][ny + 1][k] =  0  ;
+                    var_v[i][ny + 1][k] = 0;
+                    var_w[i][ny + 1][k] = -var_w[i][ny][k]  ;
                 }
             }
             break;
         case 's': //
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[i][0][k] = -var_u[i][1][k];
-                    var_v[i][0][k] = -var_v[i][1][k];
-                    var_w[i][0][k] = 0 ;
+                    var_v[i][0][k] = 0;
+                    var_w[i][0][k] = -var_w[i][1][k] ;
                 }
             }
             break;
-        case 'f': //
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
+        case 'f': // xy plane of grid cell
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][0] = -var_u[i][j][1];
-                    var_v[i][j][0] = 0;
-                    var_w[i][j][0] = -var_w[i][j][1];
+                    var_v[i][j][0] = -var_w[i][j][1];
+                    var_w[i][j][0] = 0;
                 }
             }
             break;
         case 'b': //
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][nz+1] = -var_u[i][j][nz];
-                    var_w[i][j][nz+1] = 0;
                     var_w[i][j][nz+1] = -var_w[i][j][nz];
+                    var_w[i][j][nz+1] = 0;
                 }
             }
             break;
@@ -157,9 +157,9 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
 
 void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int nx, int ny, int nz , char side) {
     switch (side) {
-        case 'w':
-            for (int j = 0; j <= ny + 1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+        case 'w': // yz plane of grid cell
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[0][j][k] = var_u[1][j][k];
                     var_v[0][j][k] = var_v[1][j][k];
                     var_w[0][j][k] = var_w[1][j][k];
@@ -167,47 +167,47 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
             }
             break;
         case 'e':
-            for (int j = 0; j <= ny + 1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[nx][j][k]   = var_u[nx - 1][j][k];
                     var_v[nx+1][j][k] = var_v[nx][j][k];
                     var_w[nx+1][j][k] = var_w[nx][j][k];
                 }
             }
             break;
-        case 'n':
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
-                    var_u[i][j][nz+1] = var_u[i][j][nz];
-                    var_v[i][j][nz+1] = var_v[i][j][nz];
-                    var_w[i][j][nz] = var_w[i][j][nz-1];
+        case 'n': // xz plane of grid cell
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= ny ; k++ ) {
+                    var_u[i][ny+1][k]  = var_u[i][ny][k];
+                    var_v[i][ny][k]    = var_v[i][ny-1][k];
+                    var_w[i][ny+1][k]  = var_w[i][ny][k];
                 }
             }
             break;
         case 's':
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int j = 0 ; j <= nz+1 ; j++ ) {
-                    var_u[i][j][0] = var_u[i][j][nz];
-                    var_v[i][j][0] = var_v[i][j][nz];
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
+                    var_u[i][0][k] = var_u[i][1][k];
+                    var_v[i][0][k] = var_v[i][1][k];
+                    var_w[i][0][k] = var_w[i][1][k];
+                }
+            }
+            break;
+        case 'f': // xy plane of grid cell
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
+                    var_u[i][j][0] = var_u[i][j][1];
+                    var_v[i][j][0] = var_v[i][j][1];
                     var_w[i][j][0] = var_w[i][j][1];
                 }
             }
             break;
-        case 'f': // Front Side of Grid
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
-                    var_u[i][0][k] = var_v[i][1][k];
-                    var_v[i][0][k] = var_v[i][1][k];
-                    var_w[i][0][k] = var_v[i][1][k];
-                }
-            }
-            break;
         case 'b': // Back Side of Grid
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ){
-                    var_u[i][ny+1][k] = var_u[i][ny][k];
-                    var_v[i][ny][k] = var_v[i][ny-1][k];
-                    var_w[i][ny+1][k] = var_w[i][ny][k];
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ){
+                    var_u[i][j][nz+1] = var_u[i][j][nz];
+                    var_v[i][j][nz+1] = var_v[i][j][nz];
+                    var_w[i][j][nz]   = var_w[i][j][nz-1];
                 }
             }
             break;
@@ -217,8 +217,8 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
 void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int nx, int ny, int nz, char side, double u, double v, double w) {
     switch (side) {
         case 'w':
-            for (int j = 0; j <= ny + 1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[0][j][k] = u;
                     var_v[0][j][k] = 2 * v - var_v[1][j][k];
                     var_w[0][j][k] = 2 * w - var_w[1][j][k];
@@ -226,8 +226,8 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'e':
-            for (int j = 0; j <= ny + 1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[nx][j][k] = u;
                     var_v[nx + 1][j][k] = 2 * v - var_v[nx][j][k];
                     var_w[nx + 1][j][k] = 2 * w - var_w[nx][j][k];
@@ -235,38 +235,38 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'n':
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
-                    var_u[i][j][nz+1] = 2 * u - var_u[i][j][nz];
-                    var_v[i][j][nz+1] = 2 * v - var_v[i][j][nz];
-                    var_w[i][j][nz] = w;
-                }
-            }
-            break;
-        case 's':
-            for (int i = 0; i <= nx + 1; i++) {
-                for (int j = 0; j <= ny + 1; j++) {
-                    var_u[i][j][0] = 2 * u - var_u[i][j][1];
-                    var_v[i][j][0] = 2 * v - var_v[i][j][1];
-                    var_w[i][j][0] = w;
-                }
-            }
-            break;
-        case 'f':
-            for (int i = 0; i <= nx + 1; i++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[i][ny + 1][k] = 2 * u - var_u[i][ny][k];
                     var_v[i][ny][k] = v;
                     var_w[i][ny + 1][k] = 2 * w - var_w[i][ny][k];
                 }
             }
             break;
-        case 'b':
-            for (int i = 0; i <= nx + 1; i++) {
-                for (int k = 0; k <= nz + 1; k++) {
+        case 's':
+            for (int i = 1; i <= nx; i++) {
+                for (int k = 1; k <= nz; k++) {
                     var_u[i][0][k] = 2 * u - var_u[i][1][k];
-                    var_v[i][1][k] = v;
+                    var_v[i][0][k] = v;
                     var_w[i][0][k] = 2 * w - var_w[i][1][k];
+                }
+            }
+            break;
+        case 'f':
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
+                    var_u[i][j][nz+1] = 2 * u - var_u[i][j][nz];
+                    var_v[i][j][nz+1] = 2 * v - var_v[i][j][nz];
+                    var_w[i][j][nz] = w;
+                }
+            }
+            break;
+        case 'b':
+            for (int i = 1; i <= nx; i++) {
+                for (int j = 1; j <= ny; j++) {
+                    var_u[i][j][0] = 2 * u - var_u[i][j][1];
+                    var_v[i][j][0] = 2 * v - var_v[i][j][1];
+                    var_w[i][j][0] = w;
                 }
             }
             break;
@@ -279,44 +279,44 @@ void pressure_condition_3D(double ***var_P, int nx, int ny, int nz,  double dx, 
         case 'D': // Dirichlet Boundary Condition : First-Type
             switch (side) {
                 case 'w':
-                    for (int j = 0; j <= ny + 1; j++) {
-                        for (int k = 0; k <= nz + 1; k++) {
+                    for (int j = 1; j <= ny; j++) {
+                        for (int k = 1; k <= nz; k++) {
                             var_P[0][j][k] = 2 * P - var_P[1][j][k];
                         }
                     }
                     break;
                 case 'n':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int k = 0; k <= nz + 1; k++) {
+                    for (int i = 1; i <= nx; i++) {
+                        for (int k = 1; k <= nz; k++) {
                             var_P[i][ny + 1][k] = 2 * P - var_P[i][ny][k];
                         }
                     }
                     break;
                 case 'e':
-                    for (int j = 0; j <= ny + 1; j++) {
-                        for (int k = 0; k <= nz + 1; k++) {
+                    for (int j = 1; j <= ny; j++) {
+                        for (int k = 1; k <= nz; k++) {
                             var_P[nx + 1][j][k] = 2 * P - var_P[nx][j][k];
                         }
                     }
                     break;
                 case 's':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int k = 0; k <= nz + 1; k++) {
+                    for (int i = 1; i <= nx; i++) {
+                        for (int k = 1; k <= nz; k++) {
                             var_P[i][0][k] = 2 * P - var_P[i][1][k];
                         }
                     }
                     break;
                 case 'f':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int j = 0; j <= ny + 1; j++) {
+                    for (int i = 1; i <= nx; i++) {
+                        for (int j = 1; j <= ny; j++) {
                             var_P[i][j][0] = 2 * P - var_P[i][j][1];
                         }
                     }
                     break;
                 case 'b':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int j = 0; j <= ny + 1; j++) {
-                            var_P[i][j][nz + 1] = 2 * P - var_P[i][1][nz];
+                    for (int i = 1; i <= nx; i++) {
+                        for (int j = 1; j <= ny; j++) {
+                            var_P[i][j][nz + 1] = 2 * P - var_P[i][j][nz];
                         }
                     }
                     break;
@@ -325,44 +325,44 @@ void pressure_condition_3D(double ***var_P, int nx, int ny, int nz,  double dx, 
         case 'N': // Neumann Boundary Condition : Second-Type
             switch (side) {
                 case 'w':
-                    for (int j = 0; j <= ny + 1; j++) {
-                        for (int k = 0; k <= nz + 1; k++) {
+                    for (int j = 1; j <= ny; j++) {
+                        for (int k = 1; k <= nz; k++) {
                             var_P[0][j][k] = var_P[1][j][k];
                         }
                     }
                     break;
-                case 'n':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int k = 0; k <= nz + 1; k++) {
-                            var_P[i][0][k] = var_P[i][1][k];
-                        }
-                    }
-                    break;
                 case 'e':
-                    for (int j = 0; j <= ny + 1; j++) {
-                        for (int k = 0; k <= nz + 1; k++) {
+                    for (int j = 1; j <= ny; j++) {
+                        for (int k = 1; k <= nz; k++) {
                             var_P[nx + 1][j][k] = var_P[nx][j][k];
                         }
                     }
                     break;
+                case 'n':
+                    for (int i = 1; i <= nx; i++) {
+                        for (int k = 1; k <= nz; k++) {
+                            var_P[i][ny+1][k] = var_P[i][ny][k];
+                        }
+                    }
+                    break;
                 case 's':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int k = 0; k <= nz + 1; k++) {
-                            var_P[i][ny + 1][k] = var_P[i][ny][k];
+                    for (int i = 1; i <= nx; i++) {
+                        for (int k = 1; k <= nz; k++) {
+                            var_P[i][0][k] = var_P[i][1][k];
                         }
                     }
                     break;
                 case 'f':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int j = 0; j <= ny + 1; j++) {
-                            var_P[i][j][0] = var_P[i][j][1];
+                    for (int i = 1; i <= nx; i++) {
+                        for (int j = 1; j <= ny; j++) {
+                            var_P[i][j][nz+1] = var_P[i][j][nz];
                         }
                     }
                     break;
                 case 'b':
-                    for (int i = 0; i <= nx + 1; i++) {
-                        for (int j = 0; j <= ny + 1; j++) {
-                            var_P[i][j][nz + 1] = var_P[i][1][nz];
+                    for (int i = 1; i <= nx; i++) {
+                        for (int j = 0; j <= ny; j++) {
+                            var_P[i][j][0] = var_P[i][j][1];
                         }
                     }
                     break;

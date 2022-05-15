@@ -103,8 +103,8 @@ clean: CMakeFiles/math_diff_3D.dir/clean
 # Target rules for target CMakeFiles/PollutantSimulation.dir
 
 # All Build rule for target.
-CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_FG.dir/all
 CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/Libraries.dir/all
+CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_FG.dir/all
 CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_poisson.dir/all
 CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_uv.dir/all
 CMakeFiles/PollutantSimulation.dir/all: CMakeFiles/compute_phi.dir/all
@@ -368,8 +368,8 @@ CMakeFiles/math_diff.dir/clean:
 # Target rules for target CMakeFiles/Simulation3D.dir
 
 # All Build rule for target.
-CMakeFiles/Simulation3D.dir/all: CMakeFiles/compute_poisson_3D.dir/all
 CMakeFiles/Simulation3D.dir/all: CMakeFiles/compute_FG_3D.dir/all
+CMakeFiles/Simulation3D.dir/all: CMakeFiles/compute_poisson_3D.dir/all
 CMakeFiles/Simulation3D.dir/all: CMakeFiles/compute_phi_3D.dir/all
 CMakeFiles/Simulation3D.dir/all: CMakeFiles/Libraries_3D.dir/all
 CMakeFiles/Simulation3D.dir/all: CMakeFiles/compute_uv_3D.dir/all

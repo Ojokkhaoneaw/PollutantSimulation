@@ -65,8 +65,77 @@ void paraview(int num_iter, const string& varName, double **var, int nx, int ny,
             myfile << var[i][j] << endl;
         }
     }
+    myfile.close();
+}
+void paraview_vector(int num_iter, double **var_u,double **var_v,double**var_p ,double**var_phi, int nx, int ny, double dx, double dy) {
+    string fileName = "result_" + to_string(num_iter) + ".vtk";
+    ofstream myfile;
+    myfile.open(fileName);
+
+    //Paraview Header
+    myfile << "# vtk DataFile Version 3.0" << endl;
+    myfile << "FlowField" << endl;
+    myfile << "ASCII" << endl;
+
+    //Grid
+    myfile << "DATASET STRUCTURED_GRID" << endl;
+    myfile << "DIMENSIONS"<<" "<< nx+2 << " " << ny+2 << " " << 1 << " " << endl;
+    myfile << "POINTS"<<" "<< (nx+2)*(ny+2) <<" " << "double" << endl;
+    for (int j = 0; j <= ny + 1; j++) {
+        for (int i = 0; i <= nx + 1; i++) {
+            myfile << i*dx << " " << j*dy <<" "<< "0" << endl;
+        }
+    }
+    myfile << endl;
+
+    //Data
+    myfile << "POINT_DATA"<< " " << (nx+2)*(ny+2) << endl;
+    myfile << endl;
+    myfile << "SCALARS"<< " " << "pressure" <<" " <<"double" << endl;
+    myfile << "LOOKUP_TABLE" << " " << "pressure" << endl;
+    for (int j = 0; j <= ny+1; j++) {
+        for (int i = 0; i <= nx+1; i++) {
+            myfile << var_p[i][j] << endl;
+        }
+    }
+    myfile << "SCALARS"<< " " << "phi" <<" " <<"double" << endl;
+    myfile << "LOOKUP_TABLE" << " " << "phi" << endl;
+    for (int j = 0; j <= ny+1; j++) {
+        for (int i = 0; i <= nx+1; i++) {
+            myfile << var_phi[i][j] << endl;
+        }
+    }
+    myfile << "VECTORS"<< " " << "velocity" <<" " <<"double" << endl;
+    for (int j = 0; j <= ny+1; j++) {
+        for (int i = 0; i <= nx+1; i++) {
+            myfile << var_u[i][j] << " " <<var_v[i][j] << " " <<"0"<< endl;
+        }
+    }
+    myfile.close();
+}
+void save_restartfile(int num_iter, const string& varName, double **var, int nx, int ny){
+    string fileName = "var_" + varName + "_" + to_string(num_iter) + ".dat" ;
+    ofstream myfileO; // output file stream
+    myfileO.open(fileName);
+    for (int j = 0; j <= ny+1; j++){
+        for (int i = 0 ; i <= nx+1 ; i++) {
+            myfileO << var[i][j] << " " ;
+        }
+        myfileO << "\n" ;
+    }
+    myfileO << "\n" ;
 }
 
+void read_restartfile(int start_num, const string& varName, double **var, int nx, int ny){
+    string fileName = "var_" + varName + "_" + to_string(start_num) + ".dat" ;
+    ifstream myfileI; // input file stream
+    myfileI.open(fileName);
+    for (int j = ny + 1; j >= 0; j--){
+        for (int i = 0 ; i <= nx+1 ; i++) {
+            myfileI >> var[i][j] ;
+        }
+    }
+}
 
 // Boundary Condition
 //1. Inflow - > Dirichlet Inflow Boundary Condition (u0 = 1 , phi(y<=0.5) = 1, phi(y>0.5) = 0)
