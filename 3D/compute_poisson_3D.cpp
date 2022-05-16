@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void pressure_condition_3D(double ***var_p, int nx, int ny, int nz, double dx, double dy, double dz, char wall, char type, double P);
+void pressure_condition_3D(double ***var_P, int nx, int ny, int nz, char side);
 
 void update_3D(double ***var, double ***var_new, int nx, int ny, int nz);
 
@@ -20,11 +20,11 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
     for (int i = 1; i <= nx; i++) {
         for (int j = 1; j <= ny; j++) {
 	        for (int k = 1; k <= nz; k++){
-               var_p_new[i][0][k] = var_p[i][1][k];
-               var_p_new[i][ny+1][k] = var_p[i][ny][k];
-
                var_p_new[0][j][k] = var_p[1][j][k];
                var_p_new[nx+1][j][k] = var_p[nx][j][k];
+
+               var_p_new[i][0][k] = var_p[i][1][k];
+               var_p_new[i][ny+1][k] = var_p[i][ny][k];
 
                var_p_new[i][j][0] = var_p[i][j][1];
                var_p_new[i][j][nz+1] = var_p[i][j][nz];
@@ -41,24 +41,35 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
                else if (k == nz) { f = 0; b = 1; }
                else { f=1; b=1; }
 
-               var_p_new[i][j][k] = (1-omega)*var_p[i][j][k] + omega/( ((e+w)/pow(dx, 2.))+((n+s)/pow(dy, 2.))+((b+f)/pow(dz, 2.)) ) *
-               ((e*var_p[i+1][j][k]+w*var_p_new[i-1][j][k])/pow(dx, 2.) +
-                (n*var_p[i][j+1][k]+s*var_p_new[i][j-1][k])/pow(dy, 2.) +
-                (f*var_p[i][j][k+1]+b*var_p_new[i][j][k-1])/pow(dz, 2.) -
-                RHS[i][j][k] );
+               var_p_new[i][j][k] = (1-omega)*var_p[i][j][k] + omega/(((e+w)/pow(dx, 2.))+((n+s)/pow(dy, 2.))+((b+f)/pow(dz, 2.)) ) *
+                                                                            ((e*var_p[i+1][j][k]+w*var_p_new[i-1][j][k])/pow(dx, 2.) +
+                                                                             (n*var_p[i][j+1][k]+s*var_p_new[i][j-1][k])/pow(dy, 2.) +
+                                                                             (f*var_p[i][j][k+1]+b*var_p_new[i][j][k-1])/pow(dz, 2.) -
+                                                                              RHS[i][j][k] );
 
-	            r_ijk += pow(( e*(var_p[i+1][j][k]-var_p[i][j][k])-w*(var_p[i][j][k]-var_p[i-1][j][k]) )/pow(dx, 2.) + ( n*(var_p[i][j+1][k]-var_p[i][j][k])-s*(var_p[i][j][k]-var_p[i][j-1][k]) )/pow(dy, 2.) + ( f*(var_p[i][j][k+1]-var_p[i][j][k])-b*(var_p[i][j][k]-var_p[i][j][k-1]) )/pow(dz, 2.) - RHS[i][j][k], 2.);
+               r_ijk += pow(( e*(var_p[i+1][j][k]-var_p[i][j][k])-w*(var_p[i][j][k]-var_p[i-1][j][k]) )/pow(dx, 2.) +
+                             ( n*(var_p[i][j+1][k]-var_p[i][j][k])-s*(var_p[i][j][k]-var_p[i][j-1][k]) )/pow(dy, 2.) +
+                             ( f*(var_p[i][j][k+1]-var_p[i][j][k])-b*(var_p[i][j][k]-var_p[i][j][k-1]) )/pow(dz, 2.) -
+                               RHS[i][j][k], 2.);
 	        }
        }
     }
+      cout  << " ----------------------Updated-----------------------------\n " ;
+      for( int j = ny+1 ; j >= 0 ; j--){
+          for( int i = 0 ; i <= nx + 1 ; i++){
+              cout << var_p[i][j][nz/2] << " " ;
+          }
+          cout << "\n" ;
+      }
     // Update & BC Presure
     update_3D(var_p, var_p_new, nx, ny, nz);
-    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'n', 'N', 0);
-    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'e', 'N', 0);
-    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 's', 'N', 0);
-    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'w', 'N', 0);
-    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'f', 'N', 0);
-    pressure_condition_3D(var_p, nx, ny, nz, dx, dy, dz, 'b', 'N', 0);
+    pressure_condition_3D(var_p, nx, ny, nz, 'n');
+    pressure_condition_3D(var_p, nx, ny, nz, 'e');
+    pressure_condition_3D(var_p, nx, ny, nz, 's');
+    pressure_condition_3D(var_p, nx, ny, nz, 'w');
+    pressure_condition_3D(var_p, nx, ny, nz, 'f');
+    pressure_condition_3D(var_p, nx, ny, nz, 'b');
     r_norm = sqrt(r_ijk/(nx*ny*nz));
-  }  
+
+  }
 }

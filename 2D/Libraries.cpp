@@ -124,6 +124,7 @@ void save_restartfile(int num_iter, const string& varName, double **var, int nx,
         myfileO << "\n" ;
     }
     myfileO << "\n" ;
+    myfileO.close();
 }
 
 void read_restartfile(int start_num, const string& varName, double **var, int nx, int ny){
@@ -135,6 +136,7 @@ void read_restartfile(int start_num, const string& varName, double **var, int nx
             myfileI >> var[i][j] ;
         }
     }
+    myfileI.close();
 }
 
 // Boundary Condition
