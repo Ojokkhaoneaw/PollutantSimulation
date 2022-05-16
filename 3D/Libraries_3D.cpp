@@ -164,8 +164,8 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'e': //
-            for (int j = 0; j <= ny+1 ; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny ; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[nx][j][k] = 0 ;
                     var_v[nx + 1][j][k] = -var_v[nx][j][k];
                     var_w[nx + 1][j][k] = -var_w[nx][j][k];
@@ -173,8 +173,8 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'n': // xz plane of grid cell
-            for (int i = 0; i <= nx+1; i++) {
-                for (int k = 0; k <= nz+1; k++) {
+            for (int i = 1; i <= nx; i++) {
+                for (int k = 1; k <= nz; k++) {
                     var_u[i][ny + 1][k] = -var_u[i][ny][k];
                     var_v[i][ny][k] = 0;
                     var_w[i][ny + 1][k] = -var_w[i][ny][k]  ;
@@ -182,8 +182,8 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 's': //
-            for (int i = 0; i <= nx+1; i++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[i][0][k] = -var_u[i][1][k];
                     var_v[i][0][k] = 0;
                     var_w[i][0][k] = -var_w[i][1][k];
@@ -191,8 +191,8 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'b': // xy plane of grid cell
-            for (int i = 0; i <= nx+1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][0] = -var_u[i][j][1];
                     var_v[i][j][0] = -var_v[i][j][1];
                     var_w[i][j][0] = 0;
@@ -200,8 +200,8 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'f': //
-            for (int i = 0; i <= nx+1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][nz+1] = -var_u[i][j][nz];
                     var_v[i][j][nz+1] = -var_v[i][j][nz];
                     var_w[i][j][nz] = 0;
@@ -214,8 +214,8 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
 void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int nx, int ny, int nz , char side) {
     switch (side) {
         case 'w': // yz plane of grid cell
-            for (int j = 0; j <= ny+1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[0][j][k] = var_u[1][j][k];
                     var_v[0][j][k] = var_v[1][j][k];
                     var_w[0][j][k] = var_w[1][j][k];
@@ -223,8 +223,8 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
             }
             break;
         case 'e':
-            for (int j = 0; j <= ny+1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[nx][j][k]   = var_u[nx - 1][j][k];
                     var_v[nx+1][j][k] = var_v[nx][j][k];
                     var_w[nx+1][j][k] = var_w[nx][j][k];
@@ -232,8 +232,8 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
             }
             break;
         case 'n': // xz plane of grid cell
-            for (int i = 0; i <= nx+1; i++) {
-                for(int k = 0 ; k <= ny+1 ; k++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= ny ; k++ ) {
                     var_u[i][ny+1][k]  = var_u[i][ny][k];
                     var_v[i][ny][k]    = var_v[i][ny-1][k];
                     var_w[i][ny+1][k]  = var_w[i][ny][k];
@@ -241,8 +241,8 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
             }
             break;
         case 's':
-            for (int i = 0; i <= nx+1; i++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[i][0][k] = var_u[i][1][k];
                     var_v[i][0][k] = var_v[i][1][k];
                     var_w[i][0][k] = var_w[i][1][k];
@@ -250,8 +250,8 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
             }
             break;
         case 'b': // xy plane of grid cell
-            for (int i = 0; i <= nx+1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][0] = var_u[i][j][1];
                     var_v[i][j][0] = var_v[i][j][1];
                     var_w[i][j][0] = var_w[i][j][1];
@@ -259,8 +259,8 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
             }
             break;
         case 'f':
-            for (int i = 0; i <= nx+1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ){
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ){
                     var_u[i][j][nz+1] = var_u[i][j][nz];
                     var_v[i][j][nz+1] = var_v[i][j][nz];
                     var_w[i][j][nz]   = var_w[i][j][nz-1];
@@ -273,8 +273,8 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
 void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int nx, int ny, int nz, char side, double u, double v, double w) {
     switch (side) {
         case 'w':
-            for (int j = 0; j <= ny+1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[0][j][k] = u;
                     var_v[0][j][k] = 2 * v - var_v[1][j][k];
                     var_w[0][j][k] = 2 * w - var_w[1][j][k];
@@ -282,8 +282,8 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'e':
-            for (int j = 0; j <= ny+1; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[nx][j][k] = u;
                     var_v[nx + 1][j][k] = 2 * v - var_v[nx][j][k];
                     var_w[nx + 1][j][k] = 2 * w - var_w[nx][j][k];
@@ -291,8 +291,8 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'n':
-            for (int i = 0; i <= nx+1; i++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[i][ny + 1][k] = 2 * u - var_u[i][ny][k];
                     var_v[i][ny][k] = v;
                     var_w[i][ny + 1][k] = 2 * w - var_w[i][ny][k];
@@ -300,8 +300,8 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 's':
-            for (int i = 0; i <= nx+1; i++) {
-                for (int k = 0; k <= nz+1; k++) {
+            for (int i = 1; i <= nx; i++) {
+                for (int k = 1; k <= nz; k++) {
                     var_u[i][0][k] = 2 * u - var_u[i][1][k];
                     var_v[i][0][k] = v;
                     var_w[i][0][k] = 2 * w - var_w[i][1][k];
@@ -309,8 +309,8 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'f':
-            for (int i = 0; i <= nx+1; i++) {
-                for(int j = 0 ; j <= ny+1 ; j++ ) {
+            for (int i = 1; i <= nx; i++) {
+                for(int j = 1 ; j <= ny ; j++ ) {
                     var_u[i][j][nz+1] = 2 * u - var_u[i][j][nz];
                     var_v[i][j][nz+1] = 2 * v - var_v[i][j][nz];
                     var_w[i][j][nz] = w;
@@ -318,8 +318,8 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
             }
             break;
         case 'b':
-            for (int i = 0; i <= nx+1; i++) {
-                for (int j = 0; j <= ny+1; j++) {
+            for (int i = 1 ;i <= nx; i++) {
+                for (int j = 1; j <= ny; j++) {
                     var_u[i][j][0] = 2 * u - var_u[i][j][1];
                     var_v[i][j][0] = 2 * v - var_v[i][j][1];
                     var_w[i][j][0] = w;
@@ -333,43 +333,43 @@ void inflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
 void pressure_condition_3D(double ***var_P, int nx, int ny, int nz, char side) {
         switch (side) {
             case 'w':
-                for (int j = 0; j <= ny+1; j++) {
-                    for (int k = 0; k <= nz+1; k++) {
+                for (int j = 1; j <= ny; j++) {
+                    for (int k = 1; k <= nz; k++) {
                         var_P[0][j][k] = var_P[1][j][k];
                     }
                 }
                 break;
             case 'e':
-                for (int j = 0; j <= ny+1; j++) {
-                    for (int k = 0; k <= nz+1; k++) {
+                for (int j = 1; j <= ny; j++) {
+                    for (int k = 1; k <= nz; k++) {
                         var_P[nx + 1][j][k] = var_P[nx][j][k];
                     }
                 }
                 break;
             case 'n':
-                for (int i = 0; i <= nx+1; i++) {
-                    for (int k = 0; k <= nz+1; k++) {
+                for (int i = 1; i <= nx; i++) {
+                    for (int k = 1; k <= nz; k++) {
                         var_P[i][ny+1][k] = var_P[i][ny][k];
                     }
                 }
                 break;
             case 's':
-                for (int i = 0; i <= nx+1; i++) {
-                    for (int k = 0; k <= nz+1; k++) {
+                for (int i = 1; i <= nx; i++) {
+                    for (int k = 1; k <= nz; k++) {
                         var_P[i][0][k] = var_P[i][1][k];
                     }
                 }
                 break;
             case 'b':
-                for (int i = 0; i <= nx+1; i++) {
-                    for (int j = 0; j <= ny+1; j++) {
+                for (int i = 1; i <= nx; i++) {
+                    for (int j = 1; j <= ny; j++) {
                         var_P[i][j][0] = var_P[i][j][1];
                     }
                 }
                 break;
             case 'f':
-                for (int i = 0; i <= nx+1; i++) {
-                    for (int j = 0; j <= ny+1; j++) {
+                for (int i = 1; i <= nx; i++) {
+                    for (int j = 1; j <= ny; j++) {
                         var_P[i][j][nz+1] = var_P[i][j][nz];
                     }
                 }
@@ -378,38 +378,46 @@ void pressure_condition_3D(double ***var_P, int nx, int ny, int nz, char side) {
 }
 
 
-void phi_condition_3D(double ***var_phi,int nx,int ny, int nz, double D_jett, double phi) {
+void phi_condition_3D(double ***var_phi,double***var_u,double***var_v,double***var_w,int nx,int nz,int D, double D_jett,double v_jett, double phi) {
     const double pi = atan(1)*4 ;
-    const int x_c = nx/2 ;
-    const int y_c = ny/2 ;
-    const int radius = D_jett/2 ;
+    const int x_c = 5*D ;
+    const int z_c = 5*D ;
+    const double radius = D_jett/2 ;
     int d_i ;
-    double x, y, d, angle, p_w, p_h, a ;
+    double x, z, d, angle, p_w, p_h, a ;
     for (int k = 0; k <= nz+1 ; k++) {
         for (int i=0; i <= nx+1; i++) {
             x = x_c - k;
-            y = y_c - i;
-            d = sqrt(pow(x,2) + pow(y,2));
+            z = z_c - i;
+            d = sqrt(pow(x,2) + pow(z,2));
             d_i = floor(d);
             if (d_i < radius){
-                var_phi[i][1][k] = phi ;
+                var_phi[i][0][k] = phi ;
+                var_u[i][0][k] = - var_u[i][1][k];
+                var_v[i][0][k] = v_jett;
+                var_w[i][0][k] = - var_w[i][1][k];
             } else if (d_i > radius){
-                var_phi[i][1][k] = 0. ;
+                var_phi[i][0][k] = 0. ;
             } else{
                 if (x == 0) {
-                    if (y > 0) {
+                    if (z > 0) {
                         angle = pi;
                     } else {
                         angle = -pi;
                     }
                 } else {
-                    angle = atan(y / x);
+                    angle = atan(z / x);
                 }
                 p_w = (d - d_i) * sin(angle);
                 p_h = (d - d_i) * cos(angle);
                 a = p_w * p_h;
-                if (a >= 0.50) { var_phi[i][1][k] = phi ;}
-                else {var_phi[i][1][k] = 0. ;}
+                if (a >= 0.50) {
+                    var_phi[i][0][k] = phi ;
+                    var_u[i][0][k] = - var_u[i][1][k];
+                    var_v[i][0][k] = v_jett;
+                    var_w[i][0][k] = - var_w[i][1][k];
+                }
+                else {var_phi[i][0][k] = 0. ;}
             }
         }
     }

@@ -59,10 +59,10 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
                                                                              (n*var_p[i][j+1][k]+s*var_p_new[i][j-1][k])/pow(dy, 2.) +
                                                                              (f*var_p[i][j][k+1]+b*var_p_new[i][j][k-1])/pow(dz, 2.) -
                                                                               RHS[i][j][k] );
-               cout << (e*var_p[i+1][j][k]+w*var_p_new[i-1][j][k])/pow(dx, 2.) <<"\n" ;
-               cout << (n*var_p[i][j+1][k]+s*var_p_new[i][j-1][k])/pow(dy, 2.) <<"\n" ;
-               cout << (f*var_p[i][j][k+1]+b*var_p_new[i][j][k-1])/pow(dz, 2.) <<"\n" ;
-               cout << "--------------------------------\n" ;
+//               cout << (e*var_p[i+1][j][k]+w*var_p_new[i-1][j][k])/pow(dx, 2.) <<"\n" ;
+//               cout << (n*var_p[i][j+1][k]+s*var_p_new[i][j-1][k])/pow(dy, 2.) <<"\n" ;
+//               cout << (f*var_p[i][j][k+1]+b*var_p_new[i][j][k-1])/pow(dz, 2.) <<"\n" ;
+//               cout << "--------------------------------\n" ;
                r_ijk += pow(( e*(var_p[i+1][j][k]-var_p[i][j][k])-w*(var_p[i][j][k]-var_p[i-1][j][k]) )/pow(dx, 2.) +
                              ( n*(var_p[i][j+1][k]-var_p[i][j][k])-s*(var_p[i][j][k]-var_p[i][j-1][k]) )/pow(dy, 2.) +
                              ( f*(var_p[i][j][k+1]-var_p[i][j][k])-b*(var_p[i][j][k]-var_p[i][j][k-1]) )/pow(dz, 2.) -
@@ -80,6 +80,6 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
     pressure_condition_3D(var_p, nx, ny, nz, 'f');
     pressure_condition_3D(var_p, nx, ny, nz, 'b');
     r_norm = sqrt(r_ijk/(nx*ny*nz));
-    cout << r_norm <<"\n" ;
   }
+    cout << r_norm <<"\n" ;
 }
