@@ -36,7 +36,7 @@ int main() {
     const int nx = 20 * D;
     const int ny = 15 * D;
     const int nz = 10 * D;
-    const double dy = 0.1;
+    const double dy = 1;
     const double dx = dy ;
     const double dz = dy ;// 3
     const double dt = 0.1;
@@ -165,7 +165,7 @@ int main() {
     initialize_3D(u,nx,ny,nz,u_init) ;
     initialize_3D(v,nx,ny,nz,0) ;
     initialize_3D(w,nx,ny,nz,0) ;
-    initialize_3D(p,nx,ny,nz,1.) ;
+    initialize_3D(p,nx,ny,nz,0) ;
     initialize_3D(phi,nx,ny,nz,0) ;
     // Left
     inflow_condition_3D(u, v, w, nx, ny, nz, 'w', u_init, v_init, w_init);
@@ -206,6 +206,27 @@ int main() {
         compute_G_3D(G, u, v, w, nx, ny, nz, dx, dy, dz, dt, gamma, Re, g_y);
         compute_H_3D(H, u, v, w, nx, ny, nz, dx, dy, dz, dt, gamma, Re, g_z);
         compute_RHS_3D(RHS, F, G, H, nx, ny, nz, dx, dy, dz, dt);
+        cout  << " ----------------------u-----------------------------\n" ;
+        for( j = ny+1 ; j >= 0 ; j--){
+            for(i = 0 ; i <= nx + 1 ; i++){
+                cout << u[i][j][nz/2] << " " ;
+            }
+            cout << "\n" ;
+        }
+        cout  << " -----------------------P----------------------------\n" ;
+        for( j = ny+1 ; j >= 0 ; j--){
+            for(i = 0 ; i <= nx + 1 ; i++){
+                cout << p[i][j][nz/2] << " " ;
+            }
+            cout << "\n" ;
+        }
+        cout  << " ----------------------P_new-----------------------------\n" ;
+        for( j = ny+1 ; j >= 0 ; j--){
+            for(i = 0 ; i <= nx + 1 ; i++){
+                cout << p_new[i][j][nz/2] << " " ;
+            }
+            cout << "\n" ;
+        }
         poisson_3D(p, p_new, RHS, nx, ny, nz, dx, dy, dz, omega, eps, iter_max);
         inflow_condition_3D(u, v , w, nx, ny, nz, 'w', u_init, v_init, w_init);
         outflow_condition_3D(u, v, w , nx, ny, nz, 'e');
@@ -213,7 +234,6 @@ int main() {
         noslip_condition_3D(u ,v , w, nx, ny, nz, 's');
         outflow_condition_3D(u ,v , w, nx, ny, nz, 'f');
         outflow_condition_3D(u ,v , w, nx, ny, nz, 'b');
-
         compute_uv_3D(u, v, w, F, G, H, p_new, nx, ny, nz, dx, dy, dz,dt);
         compute_phi_3D(phi,phi_new,u,v,w,nx,ny,nz,dx,dy,nz,dt,gamma,Re) ;
         update_3D(phi, phi_new, nx, ny, nz) ;

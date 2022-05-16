@@ -45,6 +45,7 @@ void poisson(double **var_p, double **var_p_new, double **RHS, int nx, int ny, d
 	
       }
     }
+
     // Update & BC Presure
     update(var_p, var_p_new, nx, ny);
     pressure_condition(var_p, nx, ny, dx, dy, 'n', 'N', 0);
@@ -53,7 +54,6 @@ void poisson(double **var_p, double **var_p_new, double **RHS, int nx, int ny, d
     pressure_condition(var_p, nx, ny, dx, dy, 'w', 'N', 0);
     
     r_norm = sqrt(r_ij/(nx*ny));
-
     
     }  
 

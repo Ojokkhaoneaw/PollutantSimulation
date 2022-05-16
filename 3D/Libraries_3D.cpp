@@ -155,8 +155,8 @@ void read_restartfile_3D(int start_num, const string& varName, double ***var, in
 void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int nx, int ny, int nz, char side) {
     switch (side) {
         case 'w': // yz plane of grid cell
-            for (int j = 0; j <= ny+1 ; j++) {
-                for(int k = 0 ; k <= nz+1 ; k++ ) {
+            for (int j = 1; j <= ny ; j++) {
+                for(int k = 1 ; k <= nz ; k++ ) {
                     var_u[0][j][k] = 0 ;
                     var_v[0][j][k] = -var_v[1][j][k];
                     var_w[0][j][k] = -var_w[1][j][k];
@@ -190,7 +190,7 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
                 }
             }
             break;
-        case 'f': // xy plane of grid cell
+        case 'b': // xy plane of grid cell
             for (int i = 0; i <= nx+1; i++) {
                 for(int j = 0 ; j <= ny+1 ; j++ ) {
                     var_u[i][j][0] = -var_u[i][j][1];
@@ -199,7 +199,7 @@ void noslip_condition_3D(double ***var_u, double ***var_v,double ***var_w, int n
                 }
             }
             break;
-        case 'b': //
+        case 'f': //
             for (int i = 0; i <= nx+1; i++) {
                 for(int j = 0 ; j <= ny+1 ; j++ ) {
                     var_u[i][j][nz+1] = -var_u[i][j][nz];
@@ -258,7 +258,7 @@ void outflow_condition_3D(double ***var_u, double ***var_v,double ***var_w, int 
                 }
             }
             break;
-        case 'f': // Back Side of Grid
+        case 'f':
             for (int i = 0; i <= nx+1; i++) {
                 for(int j = 0 ; j <= ny+1 ; j++ ){
                     var_u[i][j][nz+1] = var_u[i][j][nz];
@@ -360,17 +360,17 @@ void pressure_condition_3D(double ***var_P, int nx, int ny, int nz, char side) {
                     }
                 }
                 break;
-            case 'f':
-                for (int i = 0; i <= nx+1; i++) {
-                    for (int j = 0; j <= ny+1; j++) {
-                        var_P[i][j][nz+1] = var_P[i][j][nz];
-                    }
-                }
-                break;
             case 'b':
                 for (int i = 0; i <= nx+1; i++) {
                     for (int j = 0; j <= ny+1; j++) {
                         var_P[i][j][0] = var_P[i][j][1];
+                    }
+                }
+                break;
+            case 'f':
+                for (int i = 0; i <= nx+1; i++) {
+                    for (int j = 0; j <= ny+1; j++) {
+                        var_P[i][j][nz+1] = var_P[i][j][nz];
                     }
                 }
                 break;
