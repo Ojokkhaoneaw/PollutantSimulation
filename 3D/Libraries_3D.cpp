@@ -130,7 +130,48 @@ void save_restartfile_3D(int num_iter, const string& varName, double ***var, int
     }
     myfileO.close();
 }
-
+void save_text_3D(int num_iter, double ***u, double ***v, double ***w,double ***p, double ***p_new, int nx, int ny, int nz){
+    string fileName = "Check_val" + to_string(num_iter) + ".txt" ;
+    ofstream myfileO; // output file stream
+    int i, j ;
+    myfileO.open(fileName);
+    myfileO << "time step : " << num_iter <<"\n" ;
+    myfileO << "-------------------u-----------------------\n" ;
+    for (j = ny + 1; j >= 0; j--){
+        for ( i = 0 ; i <= nx+1 ; i++) {
+            myfileO << u[i][j][nz/2] << " " ;
+        }
+        myfileO << "\n" ;
+    }
+    myfileO << "-------------------v----------------------\n" ;
+    for (j = ny + 1; j >= 0; j--){
+        for ( i = 0 ; i <= nx+1 ; i++) {
+            myfileO << v[i][j][nz/2] << " " ;
+        }
+        myfileO << "\n" ;
+    }
+    myfileO << "-------------------w-----------------------\n" ;
+    for (j = ny + 1; j >= 0; j--){
+        for ( i = 0 ; i <= nx+1 ; i++) {
+            myfileO << w[i][j][nz/2] << " " ;
+        }
+        myfileO << "\n" ;
+    }
+    myfileO << "-------------------p-----------------------\n" ;
+    for (j = ny + 1; j >= 0; j--){
+        for ( i = 0 ; i <= nx+1 ; i++) {
+            myfileO << p[i][j][nz/2] << " " ;
+        }
+        myfileO << "\n" ;
+    }
+    myfileO << "-------------------p_new-----------------------\n" ;
+    for (j = ny + 1; j >= 0; j--){
+        for ( i = 0 ; i <= nx+1 ; i++) {
+            myfileO << p_new[i][j][nz/2] << " " ;
+        }
+        myfileO << "\n" ;
+    }
+}
 void read_restartfile_3D(int start_num, const string& varName, double ***var, int nx, int ny, int nz){
     string fileName = "var3D_" + varName + "_" + to_string(start_num) + ".dat" ;
     ifstream myfileI; // input file stream
@@ -335,7 +376,7 @@ void pressure_condition_3D(double ***var_P, int nx, int ny, int nz, char side) {
             case 'w':
                 for (int j = 1; j <= ny; j++) {
                     for (int k = 1; k <= nz; k++) {
-                        var_P[0][j][k] = var_P[1][j][k];
+                        var_P[0][j][k] = - var_P[1][j][k];
                     }
                 }
                 break;

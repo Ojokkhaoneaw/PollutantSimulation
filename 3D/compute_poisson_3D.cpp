@@ -13,7 +13,7 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
   double n, e, s, w, b, f;
   double r_norm = 1.;
   
-  while (r_norm > eps && iter<iter_max){
+  while (r_norm > eps && iter<iter_max){//&& iter<iter_max
     
     double r_ijk = 0.;
     iter += 1;
@@ -82,4 +82,5 @@ void poisson_3D(double ***var_p, double ***var_p_new, double ***RHS, int nx, int
     r_norm = sqrt(r_ijk/(nx*ny*nz));
   }
     cout << r_norm <<"\n" ;
+
 }
