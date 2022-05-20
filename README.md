@@ -18,7 +18,7 @@
    + `compute_poisson.cpp` is used for computing pressure at the next time step
    + `compute_uv.cpp` is used for computing x-velocity and y-velocity at the next time step
    + `compute_phi.cpp` is used for computing pollutant at the next time step.  
-https://user-images.githubusercontent.com/93617462/169554723-c66c0c94-bce2-4cec-b0b3-c134265e654f.mp4
+
 ![phi](https://user-images.githubusercontent.com/93617462/169554002-62cc3e30-1428-4201-a53b-08a4a28602ec.mp4)
 ![u](https://user-images.githubusercontent.com/93617462/169554723-c66c0c94-bce2-4cec-b0b3-c134265e654f.mp4)
 ### 3D Simulation
