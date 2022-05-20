@@ -1,9 +1,8 @@
 0
 0
 0
-0
+nan
 0
-1.47821e+184
 0
 0
 0
@@ -15,6 +14,7 @@
 0
 0
 0
+nan
 0
 0
 0
@@ -50,7 +50,6 @@ nan
 nan
 nan
 nan
-0
 nan
 nan
 nan
@@ -65,6 +64,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -72,10 +72,10 @@ nan
 nan
 nan
 nan
-0
 nan
 nan
-0
+nan
+nan
 nan
 nan
 nan
@@ -126,6 +126,7 @@ nan
 nan
 nan
 nan
+0
 nan
 nan
 nan
@@ -134,7 +135,6 @@ nan
 nan
 nan
 nan
-0
 
 0
 nan
@@ -167,7 +167,6 @@ nan
 nan
 nan
 nan
-0
 nan
 nan
 nan
@@ -180,6 +179,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -284,12 +284,12 @@ nan
 nan
 nan
 nan
+0
 nan
 nan
 nan
 nan
 nan
-0
 nan
 nan
 nan
@@ -311,13 +311,13 @@ nan
 nan
 nan
 nan
-0
 nan
 nan
 nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -366,7 +366,6 @@ nan
 nan
 0
 
-0
 0
 0
 0
@@ -376,7 +375,7 @@ nan
 0
 0
 0
-0
+nan
 0
 0
 0
@@ -385,6 +384,7 @@ nan
 0
 0
 0
+nan
 0
 0
 0
@@ -411,7 +411,7 @@ nan
 0
 0
 0
-nan
+0
 
 nan
 nan
@@ -442,7 +442,6 @@ nan
 nan
 nan
 nan
-0
 nan
 nan
 nan
@@ -458,16 +457,15 @@ nan
 nan
 nan
 nan
+nan
 
 nan
 nan
 nan
 nan
 nan
-0
 nan
 nan
-0
 nan
 nan
 nan
@@ -481,6 +479,8 @@ nan
 nan
 nan
 nan
+nan
+nan
 
 nan
 nan
@@ -505,7 +505,6 @@ nan
 nan
 nan
 
-nan
 nan
 nan
 nan
@@ -519,6 +518,7 @@ nan
 nan
 nan
 nan
+0
 nan
 nan
 nan
@@ -559,7 +559,7 @@ nan
 nan
 nan
 nan
-0
+nan
 nan
 nan
 nan
@@ -676,12 +676,12 @@ nan
 nan
 nan
 nan
+0
 nan
 nan
 nan
 nan
 nan
-0
 nan
 nan
 nan
@@ -703,7 +703,6 @@ nan
 nan
 nan
 nan
-0
 nan
 nan
 nan
@@ -711,6 +710,7 @@ nan
 nan
 nan
 nan
+nan
 
 nan
 nan
@@ -735,7 +735,8 @@ nan
 nan
 nan
 
--7.15344e+183
+nan
+nan
 nan
 nan
 nan
@@ -756,7 +757,6 @@ nan
 nan
 nan
 nan
-1.41303e+186
 
 0
 0
@@ -767,8 +767,7 @@ nan
 0
 0
 0
-0
-0
+nan
 0
 0
 0
@@ -777,6 +776,7 @@ nan
 0
 0
 0
+nan
 0
 0
 0
@@ -1127,7 +1127,8 @@ nan
 nan
 nan
 
--7.15294e+183
+nan
+nan
 nan
 nan
 nan
@@ -1148,7 +1149,6 @@ nan
 nan
 nan
 nan
-1.40854e+186
 
 0
 0
@@ -1519,7 +1519,6 @@ nan
 nan
 nan
 
--7.15198e+183
 nan
 nan
 nan
@@ -1540,7 +1539,8 @@ nan
 nan
 nan
 nan
-1.39974e+186
+nan
+nan
 
 0
 0
@@ -1911,7 +1911,8 @@ nan
 nan
 nan
 
--7.15066e+183
+nan
+nan
 nan
 nan
 nan
@@ -1932,7 +1933,6 @@ nan
 nan
 nan
 nan
-1.38716e+186
 
 0
 0
@@ -2303,7 +2303,6 @@ nan
 nan
 nan
 
--7.1491e+183
 nan
 nan
 nan
@@ -2324,7 +2323,8 @@ nan
 nan
 nan
 nan
-1.37171e+186
+nan
+nan
 
 0
 0
@@ -2695,7 +2695,7 @@ nan
 nan
 nan
 
--7.14747e+183
+nan
 nan
 nan
 nan
@@ -2716,7 +2716,7 @@ nan
 nan
 nan
 nan
-1.35478e+186
+nan
 
 0
 0
@@ -3087,7 +3087,8 @@ nan
 nan
 nan
 
--7.14591e+183
+nan
+nan
 nan
 nan
 nan
@@ -3108,7 +3109,6 @@ nan
 nan
 nan
 nan
-1.3381e+186
 
 0
 0
@@ -3479,7 +3479,6 @@ nan
 nan
 nan
 
--7.14459e+183
 nan
 nan
 nan
@@ -3500,7 +3499,8 @@ nan
 nan
 nan
 nan
-1.32352e+186
+nan
+nan
 
 0
 0
@@ -3871,7 +3871,7 @@ nan
 nan
 nan
 
--7.14363e+183
+nan
 nan
 nan
 nan
@@ -3892,7 +3892,7 @@ nan
 nan
 nan
 nan
-1.31273e+186
+nan
 
 0
 0
@@ -4263,7 +4263,8 @@ nan
 nan
 nan
 
--7.14312e+183
+nan
+nan
 nan
 nan
 nan
@@ -4284,7 +4285,6 @@ nan
 nan
 nan
 nan
-1.30699e+186
 
 0
 0

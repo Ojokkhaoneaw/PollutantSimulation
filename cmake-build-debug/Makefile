@@ -116,19 +116,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
-
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test
-.PHONY : test
-
-# fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
-
-#=============================================================================
 # Target rules for targets named PollutantSimulation
 
 # Build rule for target.
@@ -646,30 +633,6 @@ math_diff_3D/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\math_diff_3D.dir\build.make CMakeFiles/math_diff_3D.dir/3D/math_diff_3D.cpp.s
 .PHONY : 3D/math_diff_3D.cpp.s
 
-test.obj: test.cpp.obj
-.PHONY : test.obj
-
-# target to build an object file
-test.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test.cpp.obj
-.PHONY : test.cpp.obj
-
-test.i: test.cpp.i
-.PHONY : test.i
-
-# target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test.cpp.i
-.PHONY : test.cpp.i
-
-test.s: test.cpp.s
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test.cpp.s
-.PHONY : test.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -692,7 +655,6 @@ help:
 	@echo ... compute_uv_3D
 	@echo ... math_diff
 	@echo ... math_diff_3D
-	@echo ... test
 	@echo ... 2D/Libraries.obj
 	@echo ... 2D/Libraries.i
 	@echo ... 2D/Libraries.s
@@ -735,9 +697,6 @@ help:
 	@echo ... 3D/math_diff_3D.obj
 	@echo ... 3D/math_diff_3D.i
 	@echo ... 3D/math_diff_3D.s
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
 .PHONY : help
 
 

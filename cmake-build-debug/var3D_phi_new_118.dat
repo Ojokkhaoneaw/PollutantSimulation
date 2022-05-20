@@ -564,7 +564,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -572,6 +571,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -587,7 +587,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -595,9 +594,11 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -610,7 +611,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -656,7 +656,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -664,6 +663,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -967,6 +967,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -979,7 +980,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -1313,6 +1313,8 @@ nan
 0
 
 0
+nan
+nan
 nan
 nan
 nan
@@ -1322,13 +1324,11 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -1602,7 +1602,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -1610,6 +1609,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -1625,7 +1625,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -1633,6 +1632,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -1659,6 +1659,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -1668,8 +1669,6 @@ nan
 nan
 nan
 nan
--inf
-inf
 nan
 nan
 nan
@@ -1679,9 +1678,11 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -1691,17 +1692,16 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -1751,6 +1751,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -1760,17 +1761,16 @@ nan
 nan
 nan
 nan
--inf
-inf
 nan
 nan
 nan
-inf
--inf
 nan
 nan
 nan
 nan
+nan
+nan
+nan
 0
 
 0
@@ -1809,7 +1809,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -1817,6 +1816,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -2120,6 +2120,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -2132,7 +2133,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2152,7 +2152,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2163,9 +2162,11 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -2173,7 +2174,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2201,7 +2201,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2209,6 +2208,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -2247,7 +2247,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2255,6 +2254,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -2304,6 +2304,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -2316,7 +2317,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2392,8 +2392,8 @@ nan
 nan
 nan
 nan
--inf
 nan
+nan
 0
 
 0
@@ -2420,14 +2420,13 @@ nan
 0
 
 0
+nan
 nan
 nan
-inf
 nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2440,15 +2439,15 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
 nan
--inf
-inf
 nan
 nan
 nan
@@ -2463,9 +2462,12 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
+nan
 nan
 nan
 nan
@@ -2474,7 +2476,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2482,7 +2483,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2566,7 +2566,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2578,6 +2577,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -2627,6 +2627,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -2639,7 +2640,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2685,7 +2685,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2693,6 +2692,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -2766,12 +2766,9 @@ nan
 0
 
 0
+nan
 nan
--inf
 nan
-inf
--inf
-inf
 nan
 nan
 nan
@@ -2784,8 +2781,11 @@ nan
 nan
 nan
 nan
-inf
 nan
+nan
+nan
+nan
+nan
 0
 
 0
@@ -2835,11 +2835,12 @@ nan
 0
 
 0
+nan
+nan
+nan
 nan
 nan
 nan
--inf
-inf
 nan
 nan
 nan
@@ -2854,7 +2855,6 @@ nan
 nan
 nan
 nan
--inf
 0
 
 0
@@ -2870,7 +2870,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2878,9 +2877,12 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
+nan
 nan
 nan
 nan
@@ -2889,7 +2891,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2897,18 +2898,15 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
 0
 
 0
-inf
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -2924,9 +2922,13 @@ nan
 nan
 nan
 nan
+nan
+nan
 0
 
 0
+nan
+nan
 nan
 nan
 nan
@@ -2934,7 +2936,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -2946,7 +2947,6 @@ nan
 nan
 nan
 nan
-inf
 0
 
 0
@@ -2966,10 +2966,10 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
+nan
 0
 
 0
@@ -3031,7 +3031,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -3039,9 +3038,11 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -3054,7 +3055,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3100,7 +3100,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -3108,6 +3107,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -3158,26 +3158,26 @@ nan
 0
 
 0
+nan
+nan
+nan
 nan
-inf
 nan
--inf
-inf
--inf
 nan
 nan
 nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
 nan
 nan
--inf
 nan
+nan
+nan
+nan
 0
 
 0
@@ -3193,7 +3193,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3201,6 +3200,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -3227,12 +3227,13 @@ nan
 0
 
 0
+nan
+nan
+nan
 nan
 nan
 nan
-inf
 nan
-inf
 nan
 nan
 nan
@@ -3246,7 +3247,6 @@ nan
 nan
 nan
 nan
-inf
 0
 
 0
@@ -3269,14 +3269,15 @@ nan
 nan
 nan
 nan
--inf
+nan
 0
 
 0
+nan
+nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3285,7 +3286,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3300,7 +3300,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3316,9 +3315,11 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -3331,7 +3332,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3423,7 +3423,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3431,6 +3430,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -3457,6 +3457,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -3469,7 +3470,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -3551,28 +3551,29 @@ nan
 
 0
 nan
--inf
 nan
-inf
--inf
-inf
 nan
 nan
 nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
 nan
 nan
 nan
-inf
+nan
+nan
+nan
+nan
+nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -3592,7 +3593,6 @@ nan
 nan
 nan
 nan
--inf
 0
 
 0
@@ -3615,16 +3615,15 @@ nan
 nan
 nan
 nan
-inf
+nan
 0
 
 0
-inf
+nan
+nan
 nan
 nan
--inf
 nan
--inf
 nan
 nan
 nan
@@ -3637,16 +3636,16 @@ nan
 nan
 nan
 nan
-inf
--inf
+nan
+nan
+nan
 0
 
 0
+nan
 nan
 nan
-inf
 nan
--inf
 nan
 nan
 nan
@@ -3660,15 +3659,16 @@ nan
 nan
 nan
 nan
--inf
 nan
+nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -3690,10 +3690,7 @@ nan
 0
 nan
 nan
--inf
 nan
-inf
--inf
 nan
 nan
 nan
@@ -3708,9 +3705,13 @@ nan
 nan
 nan
 nan
+nan
+nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -3723,7 +3724,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -3769,7 +3769,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3777,6 +3776,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -3884,7 +3884,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -3892,6 +3891,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -3942,26 +3942,26 @@ nan
 0
 
 0
+nan
+nan
+nan
+nan
+nan
 nan
 nan
 nan
--inf
-inf
--inf
 nan
 nan
 nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
 nan
 nan
 nan
--inf
 0
 
 0
@@ -3984,16 +3984,17 @@ nan
 nan
 nan
 nan
-inf
+nan
 0
 
 0
+nan
+nan
 nan
 nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan
@@ -4007,16 +4008,13 @@ nan
 nan
 nan
 nan
--inf
 0
 
 0
--inf
 nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -4031,14 +4029,16 @@ nan
 nan
 nan
 nan
+nan
+nan
 0
 
 0
+nan
+nan
 nan
 nan
--inf
 nan
-inf
 nan
 nan
 nan
@@ -4058,9 +4058,7 @@ nan
 
 0
 nan
-inf
 nan
--inf
 nan
 nan
 nan
@@ -4077,15 +4075,15 @@ nan
 nan
 nan
 nan
+nan
+nan
 0
 
 0
--inf
+nan
+nan
 nan
-inf
 nan
--inf
-inf
 nan
 nan
 nan
@@ -4100,6 +4098,8 @@ nan
 nan
 nan
 nan
+nan
+nan
 0
 
 0
@@ -4230,7 +4230,6 @@ nan
 nan
 nan
 nan
-inf
 nan
 nan
 nan
@@ -4238,9 +4237,11 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -4253,7 +4254,6 @@ nan
 nan
 nan
 nan
--inf
 nan
 nan
 nan

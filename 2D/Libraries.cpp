@@ -34,39 +34,7 @@ void update(double **var, double **var_new, int nx, int ny) {
     }
 }
 
-void paraview(int num_iter, const string& varName, double **var, int nx, int ny, double dx, double dy) {
-    string fileName = "var_" + varName + "_" + to_string(num_iter) + ".vtk";
-    ofstream myfile;
-    myfile.open(fileName);
 
-    //Paraview Header
-    myfile << "# vtk DataFile Version 2.0" << endl;
-    myfile << "FlowField" << endl;
-    myfile << "ASCII" << endl;
-
-    //Grid
-    myfile << "DATASET STRUCTURED_GRID" << endl;
-    myfile << "DIMENSIONS"<<" "<< nx+2 << " " << ny+2 << " " << 1 << " " << endl;
-    myfile << "POINTS"<<" "<< (nx+2)*(ny+2) <<" " << "double" << endl;
-    for (int j = 0; j <= ny + 1; j++) {
-        for (int i = 0; i <= nx + 1; i++) {
-            myfile << i*dx << " " << j*dy <<" "<< "0" << endl;
-        }
-    }
-    myfile << endl;
-
-    //Data
-    myfile << "POINT_DATA"<< " " << (nx+2)*(ny+2) << endl;
-    myfile << endl;
-    myfile << "SCALARS"<< " " << varName <<" " <<"double" << endl;
-    myfile << "LOOKUP_TABLE default" << endl;
-    for (int j = 0; j <= ny+1; j++) {
-        for (int i = 0; i <= nx+1; i++) {
-            myfile << var[i][j] << endl;
-        }
-    }
-    myfile.close();
-}
 void paraview_vector(int num_iter, double **var_u,double **var_v,double**var_p ,double**var_phi, int nx, int ny, double dx, double dy) {
     string fileName = "result_" + to_string(num_iter) + ".vtk";
     ofstream myfile;
@@ -142,7 +110,7 @@ void read_restartfile(int start_num, const string& varName, double **var, int nx
 // Boundary Condition
 //1. Inflow - > Dirichlet Inflow Boundary Condition (u0 = 1 , phi(y<=0.5) = 1, phi(y>0.5) = 0)
 //2. Wall - > Dirichlet & No-slip Boundary Condition (Bottom Wall) (u = v = 0)
-//3. Outflow - > Neumann Outflow Boundary Condition (du_dx_3D = dv_dx = 0)
+//3. Outflow - > Neumann Outflow Boundary Condition (du_dx = dv_dx = 0)
 void noslip_condition(double **var_u, double **var_v, int nx, int ny, char side) {
     switch (side) {
         case 'w': // Left Side of Grid

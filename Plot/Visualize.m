@@ -1,10 +1,10 @@
 clc ;
 clf ; 
 result = load('var_u_5000.dat') ;
-nx = 100;
-ny = 11 ; 
-dx = 0.3 ;
-dy = 0.1 ;
+nx = 200;
+ny = 21 ; 
+dy = 0.05 ;
+dx = dy*3 ;
 y = (0:1:ny-1)*dy ;
 % x = (0:1:nx-1)*dx ; 
 x = 1 ;
@@ -35,13 +35,13 @@ function target = get_velocity_x(result,x,ny)
 end
 function plot_ideal() 
     a = 1; %distance between plate
-    neu = 1; %dynamic viscosity
-    p1 = 100 ; %pressure at inlet 
-    p2 = 96.45 ; %pressure at outlet 
+    neu = 0.0008900; %dynamic viscosity
+    p1 = 1.3 ; %pressure at inlet 
+    p2 = -0.21 ; %pressure at outlet 
     dp = p2-p1;
 
     x1 = 0;
-    x2 = 0.3;
+    x2 = 30;
     dx = x2-x1; %plate length
 
     y = linspace(0,a,100);

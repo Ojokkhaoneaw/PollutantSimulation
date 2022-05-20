@@ -9,11 +9,11 @@
 0
 0
 0
-0
-1.20941e+188
-0
+nan
 0
 0
+nan
+nan
 0
 0
 0
@@ -46,7 +46,6 @@ nan
 
 0
 nan
--1.23316e+183
 nan
 nan
 nan
@@ -65,6 +64,7 @@ nan
 nan
 nan
 nan
+nan
 0
 
 0
@@ -252,6 +252,7 @@ nan
 0
 
 0
+nan
 nan
 nan
 nan
@@ -264,7 +265,6 @@ nan
 nan
 nan
 nan
-1.44102e+188
 nan
 nan
 nan
@@ -384,10 +384,10 @@ nan
 0
 0
 0
-5.8016e+186
 0
 0
 0
+0
 
 
 0
@@ -411,7 +411,7 @@ nan
 nan
 nan
 nan
-nan
+0
 
 nan
 nan
@@ -438,7 +438,6 @@ nan
 
 nan
 nan
--1.23316e+183
 nan
 nan
 nan
@@ -458,6 +457,7 @@ nan
 nan
 nan
 nan
+nan
 
 nan
 nan
@@ -643,6 +643,7 @@ nan
 nan
 nan
 
+nan
 nan
 nan
 nan
@@ -656,7 +657,6 @@ nan
 nan
 nan
 nan
-1.44102e+188
 nan
 nan
 nan
@@ -3919,29 +3919,28 @@ nan
 
 
 0
--3.54249e+182
--1.23416e+183
--5.17896e+183
--2.20026e+184
--9.3623e+184
--3.98429e+185
--1.68978e+186
--7.04164e+186
--2.74099e+187
--8.43777e+187
--9.27981e+187
-4.7306e+188
--1.9186e+188
-4.89747e+188
--9.42016e+187
--8.92783e+187
--2.92627e+187
--7.54625e+186
--1.83483e+186
--5.27493e+185
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
 0
 
--3.54249e+182
 nan
 nan
 nan
@@ -3962,9 +3961,10 @@ nan
 nan
 nan
 nan
-5.27493e+185
+nan
+nan
 
--3.53876e+182
+nan
 nan
 nan
 nan
@@ -3985,9 +3985,10 @@ nan
 nan
 nan
 nan
-5.29442e+185
+nan
 
--3.53137e+182
+nan
+nan
 nan
 nan
 nan
@@ -4008,9 +4009,7 @@ nan
 nan
 nan
 nan
-5.32736e+185
 
--3.52047e+182
 nan
 nan
 nan
@@ -4031,9 +4030,10 @@ nan
 nan
 nan
 nan
-5.36253e+185
+nan
+nan
 
--3.50635e+182
+nan
 nan
 nan
 nan
@@ -4054,9 +4054,9 @@ nan
 nan
 nan
 nan
-5.38547e+185
+nan
 
--3.4894e+182
+nan
 nan
 nan
 nan
@@ -4077,9 +4077,10 @@ nan
 nan
 nan
 nan
-5.38122e+185
+nan
 
--3.4702e+182
+nan
+nan
 nan
 nan
 nan
@@ -4100,9 +4101,7 @@ nan
 nan
 nan
 nan
-5.33776e+185
 
--3.44945e+182
 nan
 nan
 nan
@@ -4123,9 +4122,9 @@ nan
 nan
 nan
 nan
-5.24927e+185
+nan
+nan
 
--3.42803e+182
 nan
 nan
 nan
@@ -4146,9 +4145,10 @@ nan
 nan
 nan
 nan
-5.11828e+185
+nan
+nan
 
--3.40691e+182
+nan
 nan
 nan
 nan
@@ -4169,9 +4169,9 @@ nan
 nan
 nan
 nan
-4.95563e+185
+nan
 
--3.38715e+182
+nan
 nan
 nan
 nan
@@ -4192,9 +4192,10 @@ nan
 nan
 nan
 nan
-4.77817e+185
+nan
 
--3.36979e+182
+nan
+nan
 nan
 nan
 nan
@@ -4215,9 +4216,7 @@ nan
 nan
 nan
 nan
-4.60551e+185
 
--3.3558e+182
 nan
 nan
 nan
@@ -4238,9 +4237,9 @@ nan
 nan
 nan
 nan
-4.45673e+185
+nan
+nan
 
--3.34599e+182
 nan
 nan
 nan
@@ -4261,9 +4260,10 @@ nan
 nan
 nan
 nan
-4.34793e+185
+nan
+nan
 
--3.34095e+182
+nan
 nan
 nan
 nan
@@ -4284,29 +4284,29 @@ nan
 nan
 nan
 nan
-4.29054e+185
+nan
 
 0
-3.34095e+182
-1.1425e+183
-4.69046e+183
-1.93791e+184
-7.94812e+184
-3.21753e+185
-1.27147e+186
-4.7715e+186
-1.57456e+187
-3.55157e+187
--5.02493e+186
--1.83061e+188
-6.8941e+187
--1.88728e+188
--5.51162e+186
-3.76824e+187
-1.67753e+187
-5.09819e+186
-1.37937e+186
-4.29054e+185
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
 0
 
 

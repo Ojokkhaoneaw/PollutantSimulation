@@ -1,14 +1,5 @@
 0.5
 0.5
--3.27425e+184
-0.5
-0.5
-0.5
-0.5
--1.86167e+187
-0.5
-0.5
--4.09314e+187
 0.5
 0.5
 0.5
@@ -19,6 +10,38 @@
 0.5
 0.5
 0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+nan
+0.5
+
+0.5
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+-0.5
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
 0.5
 
 0.5
@@ -111,6 +134,29 @@ nan
 nan
 nan
 nan
+nan
+
+0.5
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
 0.5
 
 0.5
@@ -125,7 +171,7 @@ nan
 nan
 nan
 nan
-6.65207e+189
+nan
 nan
 nan
 nan
@@ -148,6 +194,18 @@ nan
 nan
 nan
 nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0.5
+
+0.5
 nan
 nan
 nan
@@ -158,39 +216,7 @@ nan
 nan
 nan
 0
-
-0.5
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
 nan
-0.5
-
-0.5
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
 nan
 nan
 nan
@@ -200,9 +226,6 @@ nan
 nan
 nan
 nan
-nan
-nan
-nan
 0.5
 
 0.5
@@ -321,14 +344,6 @@ nan
 0.5
 
 0.5
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
 nan
 nan
 nan
@@ -341,17 +356,6 @@ nan
 nan
 nan
 nan
-0.5
-
-0.5
-nan
-nan
-nan
-nan
-nan
-nan
-nan
-nan
 nan
 nan
 nan
@@ -359,11 +363,7 @@ nan
 nan
 nan
 nan
--3.11458e+187
 nan
-nan
-nan
-nan
 0.5
 
 0.5
@@ -400,7 +400,7 @@ nan
 nan
 nan
 nan
-nan
+0.5
 nan
 nan
 nan
@@ -423,6 +423,7 @@ nan
 nan
 nan
 nan
+-0.5
 nan
 nan
 nan
@@ -433,7 +434,6 @@ nan
 nan
 nan
 nan
-nan
 0.5
 
 0.5
@@ -517,7 +517,6 @@ nan
 nan
 nan
 nan
-6.65207e+189
 nan
 nan
 nan
@@ -526,7 +525,8 @@ nan
 nan
 nan
 nan
-0.5
+nan
+nan
 
 0.5
 nan
@@ -549,7 +549,7 @@ nan
 nan
 nan
 nan
-nan
+0.5
 
 0.5
 nan
@@ -607,6 +607,7 @@ nan
 nan
 nan
 nan
+0
 nan
 nan
 nan
@@ -617,7 +618,6 @@ nan
 nan
 nan
 nan
-nan
 0.5
 
 0.5
@@ -736,6 +736,7 @@ nan
 0.5
 
 0.5
+nan
 nan
 nan
 nan
@@ -751,7 +752,6 @@ nan
 nan
 nan
 nan
--3.11458e+187
 nan
 nan
 nan
@@ -4679,26 +4679,26 @@ nan
 0.5
 
 0.5
-3.7395e+184
-1.18208e+185
-3.40017e+185
-9.86208e+185
-2.94838e+186
-9.21007e+186
-3.02902e+187
-1.03498e+188
-3.44873e+188
-9.46439e+188
-1.31211e+189
--4.81205e+188
-5.62397e+188
--1.32917e+189
--9.86369e+188
--3.62448e+188
--1.09026e+188
--3.16162e+187
--8.68023e+186
--8.68023e+186
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
 0.5
 
 

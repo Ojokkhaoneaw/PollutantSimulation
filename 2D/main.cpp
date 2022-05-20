@@ -6,7 +6,7 @@ void initialize(double **var, int nx, int ny , double k) ;
 void visualize(double **var, int nx, int ny) ;
 
 void update(double **var, double **var_new, int nx, int ny) ;
-void paraview(int num_iter, const string& varName, double **var, int nx, int ny, double dx, double dy) ;
+
 void paraview_vector(int num_iter, double **var_u,double **var_v,double**var_p ,double**var_phi, int nx, int ny, double dx, double dy) ;
 void save_restartfile(int num_iter, const string& varName, double **var, int nx, int ny) ;
 void read_restartfile(int start_num, const string& varName, double **var, int nx, int ny) ;
@@ -34,20 +34,20 @@ int main() {
     const int start_iter = 0 ;
     const int iter = 5000;
     const int iter_max = 1000;
-    const int nx = 100; // 100
+    const int nx = 101; // 300
     const int ny = 11; // 10
     const double dy = 0.1;
-    const double dx = 3.*dy ; // 3
+    const double dx = 3.*dy ;
     const double dt = 0.01;
     const double u_init = 1.;
     const double v_init = 0.;
     const double p_init = 0.;
     const double phi_init = 1. ;
-    const double Re = 300.; // Reynolds number
+    const double Re = 300.;
     const double g_x = 0.;
     const double g_y = 0.;
-    const double gamma = 0.5; // Upwind differencing factor
-    const double omega = 1.7; // Relaxation parameter for SOR iteration
+    const double gamma = 0.5;
+    const double omega = 1.7; //  SOR
     const double eps = 0.00001; // Stopping tolerance for pressure iteration
 
     // Construct all var 2D array
@@ -109,6 +109,7 @@ int main() {
     initialize(v,nx, ny,v_init);
     initialize(p,nx, ny,p_init);
     initialize(phi,nx,ny,0) ;
+
     // West
     inflow_condition(u, v, nx, ny, 'w', u_init, v_init);
     pressure_condition(p, nx, ny, dx, dy, 'w', 'N', p_init);
@@ -117,15 +118,15 @@ int main() {
     outflow_condition(u, v, nx, ny, 'e');
     pressure_condition(p, nx, ny, dx, dy, 'e', 'D', p_init);
     phi_condition(phi,nx,ny,dx,dy,'e',phi_init) ;
-    // Wall (Top)
+    // Top - Wall
     noslip_condition(u, v, nx, ny, 'n');
     pressure_condition(p, nx, ny, dx, dy, 'n', 'N', p_init);
     phi_condition(phi,nx,ny,dx,dy,'n',phi_init) ;
-    // Wall (South)
+    // Bottom - Wall
     noslip_condition(u, v, nx, ny, 's');
     pressure_condition(p, nx, ny, dx, dy, 's', 'N', p_init);
     phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
-
+    // read file (.dat) at specific time step
     if (start_iter != 0){
         read_restartfile(start_iter,"F", F, nx, ny) ;
         read_restartfile(start_iter,"G", G, nx, ny) ;
@@ -138,27 +139,30 @@ int main() {
         read_restartfile(start_iter,"phi_new", phi_new, nx, ny) ;
     }
     for (int num_iter = start_iter; num_iter <= iter; num_iter++) {
-//        cout << "------------u-------------" <<"\n" ;
-//        visualize(u,nx,ny);
 
         compute_F(F, u, v, nx, ny, dx, dy, dt, gamma, Re, g_x);
         compute_G(G, u, v, nx, ny, dx, dy, dt, gamma,Re, g_y);
         compute_RHS(RHS, F, G, nx, ny, dx, dy, dt);
-
+        // compute P at time step n+1
         poisson(p, p_new, RHS, nx, ny, dx, dy, omega, eps, iter_max);
-        compute_uv(u, v, F, G, p_new, nx, ny, dx, dy, dt);
+        // compute u and v  at time step n+1
+        compute_uv(u, v, F, G, p, nx, ny, dx, dy, dt);
+        // apply boundary condition to u and v
         inflow_condition(u ,v , nx, ny, 'w', u_init, v_init);
         outflow_condition(u ,v , nx, ny, 'e');
         noslip_condition(u ,v , nx, ny, 'n');
         noslip_condition(u ,v , nx, ny, 's');
-
+        // compute phi at time step n+1
         compute_phi(phi,phi_new,u,v,nx,ny,dx,dy,dt,gamma,Re) ;
         update(phi,phi_new,nx,ny) ;
+        // apply boundary condition to phi
         phi_condition(phi,nx,ny,dx,dy,'w',phi_init) ;
         phi_condition(phi,nx,ny,dx,dy,'e',phi_init) ;
         phi_condition(phi,nx,ny,dx,dy,'n',phi_init) ;
         phi_condition(phi,nx,ny,dx,dy,'s',phi_init) ;
+
         if(num_iter%1000 == 0){
+            // save file (.dat) every 1000 time step
             save_restartfile(num_iter,"F", F, nx, ny) ;
             save_restartfile(num_iter,"G", G, nx, ny) ;
             save_restartfile(num_iter,"RHS", RHS, nx, ny) ;
@@ -172,14 +176,8 @@ int main() {
         }
         if (num_iter == 0 || num_iter%5 == 0) {
             cout << "time step : " << num_iter <<"\n" ;
-//            cout << "------------u-------------" <<"\n" ;
 //            visualize(u,nx,ny);
-//            paraview(num_iter ,"p" , p, nx, ny, dx, dy);
-//            paraview(num_iter ,"F" , F, nx, ny, dx, dy);
-//            paraview(num_iter ,"u" , u, nx, ny, dx, dy);
-//            paraview(num_iter ,"v" , v, nx, ny, dx, dy) ;
-//            paraview(num_iter ,"phi" , phi, nx, ny, dx, dy);
-//            paraview_vector(num_iter, u, v, p, phi, nx, ny, dx, dy) ;
+            paraview_vector(num_iter, u, v, p, phi, nx, ny, dx, dy) ;
         }
     }
 }

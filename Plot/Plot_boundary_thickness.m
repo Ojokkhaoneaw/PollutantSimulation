@@ -2,8 +2,8 @@ clc ;
 result = load('var_u_5000.dat') ;
 nx = 100;
 ny = 11 ; 
-dx = 0.3 ;
 dy = 0.1 ;
+dx = dy*3 ;
 y = (0:1:ny-1)*dy ;
 x = (0:1:nx-1)*dx ; 
 thickness = zeros(length(x)) ;
@@ -15,10 +15,10 @@ for i = 1:length(x)
     dfdx = fnder(f);
     thickness(i) = get_y_lowest_dev(dfdx,ny,dy) ;
 end
-plot(X(1:30),thickness(1:30),'b','LineWidth',2)
+plot(X(1:99),thickness(1:99),'b','LineWidth',2)
 hold on
 yline((ny-1)*dy/2,'--',{'Maximum\hspace{0.1cm}thickness'},'fontsize',14,'interpreter','Latex','LineWidth',2)
-xline(5.7,'--',{'$L_{f}$ = 5.7'},'fontsize',14,'interpreter','Latex','LineWidth',2)
+xline(14.4,'--',{'$L_{f}$ = 14.4'},'fontsize',14,'interpreter','Latex','LineWidth',2)
 ylim([0,0.6])
 ylabel('Boundary\hspace{0.1cm}layer\hspace{0.1cm}thickness\hspace{0.1cm}$(\delta)$','fontsize',14,'interpreter','Latex')
 xlabel('Channel\hspace{0.1cm}Distance\hspace{0.1cm}(x)','fontsize',14,'interpreter','Latex')
@@ -32,7 +32,7 @@ end
 function y_lowest = get_y_lowest_dev(dfdx,ny,dy)
     Range = [0:0.01:ny]*dy ;
     dev = ppval(dfdx,Range) ;
-    idx=find(dev<0.01&dev>-0.01) ;
+    idx=find(dev<0.016&dev>-0.016) ;
     target = idx(1) ; 
     y_lowest = Range(target);
 end
