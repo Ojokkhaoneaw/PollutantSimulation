@@ -45,5 +45,5 @@
     + `compute_phi_3D.cpp` is used for computing pollutant at the next time step. 
 
 ### Results
-+ https://user-images.githubusercontent.com/93617462/169554002-62cc3e30-1428-4201-a53b-08a4a28602ec.mp4
+![phi](https://user-images.githubusercontent.com/93617462/169554002-62cc3e30-1428-4201-a53b-08a4a28602ec.mp4)
 +  `Link` : https://drive.google.com/drive/folders/1jikQWdbfAfHTeM6nLEkycZDPEzcpUCtx?usp=sharing
