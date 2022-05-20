@@ -18,11 +18,13 @@
    + `compute_poisson.cpp` is used for computing pressure at the next time step
    + `compute_uv.cpp` is used for computing x-velocity and y-velocity at the next time step
    + `compute_phi.cpp` is used for computing pollutant at the next time step.  
-
-
+![phi](https://user-images.githubusercontent.com/93617462/169554002-62cc3e30-1428-4201-a53b-08a4a28602ec.mp4)
+![u](https://user-images.githubusercontent.com/93617462/169554723-c66c0c94-bce2-4cec-b0b3-c134265e654f.mp4)
 ### 3D Simulation
 1. run `g++ -o run main_3D.cpp math_diff_3D.cpp compute_uv_3D.cpp compute_poisson_3D.cpp compute_uv_3D.cpp compute_phi_3D.cpp && ./run`
 2. `main_3D.cpp` is a main file for 3D simulation.
+
+
 3. The other files are function files.
     + `Libraries_3D.cpp`  contains
         + Boundary condition function
@@ -32,10 +34,6 @@
         + Read-file function
         + Visualize-variable function
         + Export-vtk-file function
-
-
-
-
         + Export-dat-file function
 
     + `math_diff_3D.cpp` is used for computing derivative variables.
@@ -45,5 +43,4 @@
     + `compute_phi_3D.cpp` is used for computing pollutant at the next time step. 
 
 ### Results
-![phi](https://user-images.githubusercontent.com/93617462/169554002-62cc3e30-1428-4201-a53b-08a4a28602ec.mp4)
 +  `Link` : https://drive.google.com/drive/folders/1jikQWdbfAfHTeM6nLEkycZDPEzcpUCtx?usp=sharing
