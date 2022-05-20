@@ -22,7 +22,7 @@
 
 ### 3D Simulation
 1. run `g++ -o run main_3D.cpp math_diff_3D.cpp compute_uv_3D.cpp compute_poisson_3D.cpp compute_uv_3D.cpp compute_phi_3D.cpp && ./run`
-2. `main_3D.cpp` is a main file for 2D simulation.
+2. `main_3D.cpp` is a main file for 3D simulation.
 3. The other files are function files.
     + `Libraries_3D.cpp`  contains
         + Boundary condition function
