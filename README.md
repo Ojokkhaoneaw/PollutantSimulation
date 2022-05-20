@@ -14,7 +14,7 @@
      + Export-vtk-file function
      + Export-dat-file function
    + `math_diff.cpp` is used for computing derivative variables.
-   + `compute_FG.cpp` is used for computing F and G term in momentum equations.
+   + `compute_FG.cpp` is used for computing F and G terms in momentum equations.
    + `compute_poisson.cpp` is used for computing pressure at the next time step
    + `compute_uv.cpp` is used for computing x-velocity and y-velocity at the next time step
    + `compute_phi.cpp` is used for computing pollutant at the next time step.  
@@ -34,7 +34,7 @@
         + Export-vtk-file function
         + Export-dat-file function
     + `math_diff_3D.cpp` is used for computing derivative variables.
-    + `compute_FG_3D.cpp` is used for computing F and G term in momentum equations.
+    + `compute_FG_3D.cpp` is used for computing F G and H terms in momentum equations.
     + `compute_poisson_3D.cpp` is used for computing pressure at the next time step
     + `compute_uv_3D.cpp` is used for computing x-velocity, y-velocity and z-velocity at the next time step
     + `compute_phi_3D.cpp` is used for computing pollutant at the next time step. 
